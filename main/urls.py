@@ -7,5 +7,6 @@ urlpatterns = [
     path('country/<str:name>/', views.CountryDetailByName.as_view(), name='country-detail-by-name'),
     path('api/get-item-class-by-name/<str:item_class_name>/', views.ItemsClassView.as_view()),
     path("api/imports", views.Imports.as_view(), name="get_imports"),
+    path('api/update_rcpt/', views.update_rcpt_no, name='update_rcpt_no'),
 
 ]

@@ -2,6 +2,9 @@ import json
 import logging
 from main.models import Country, PackagingUnitCode, UnitOfMeasure, ItemsClass
 from main.serializers import CountrySerializer, PackagingUnitCodeSerializer, UnitOfMeasureSerializer, itemClassListSerializer
+import json
+from django.http import JsonResponse, HttpResponseBadRequest
+import mysql.connector
 from django.shortcuts import render
 import requests
 from rest_framework.decorators import api_view
@@ -21,6 +24,12 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.db import transaction, IntegrityError
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+import mysql.connector
+from mysql.connector import Error
+
 
 class ZRAClient:
     def __init__(self):
@@ -331,3 +340,36 @@ class GetAllItemClasses(APIView):
                 {"error": error_message},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
+
+@csrf_exempt
+def update_rcpt_no(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            docname = data.get('docname')
+            rcpt_no = data.get('rcpt_no')
+            
+            if not docname or not rcpt_no:
+                return JsonResponse({'error': 'Missing docname or rcpt_no'}, status=400)
+            
+            conn = mysql.connector.connect(
+                host='localhost',
+                user='root',
+                password='root',
+                database='_19ba3414f40a9844'
+            )
+            cursor = conn.cursor()
+            sql = "UPDATE `tabSales Order` SET rcpNo = %s WHERE name = %s"
+            cursor.execute(sql, (rcpt_no, docname))
+            conn.commit()
+            cursor.close()
+            conn.close()
+            
+            return JsonResponse({'success': f'rcptNo updated for {docname}'})
+        
+        except Error as e:
+            return JsonResponse({'error': str(e)}, status=500)
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
+    else:
+        return JsonResponse({'error': 'POST request required'}, status=405)
