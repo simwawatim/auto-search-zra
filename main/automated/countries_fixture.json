@@ -1,0 +1,2774 @@
+[
+  {
+    "model": "main.country",
+    "pk": 1,
+    "fields": {
+      "code": "AC",
+      "sort_order": 1,
+      "name": "ASCENSION ISLAND",
+      "description": "ASCENSION ISLAND",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 2,
+    "fields": {
+      "code": "AD",
+      "sort_order": 2,
+      "name": "ANDOZRA",
+      "description": "ANDOZRA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 3,
+    "fields": {
+      "code": "AE",
+      "sort_order": 3,
+      "name": "UNITED ARAB EMIRATES",
+      "description": "UNITED ARAB EMIRATES",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 4,
+    "fields": {
+      "code": "AG",
+      "sort_order": 4,
+      "name": "ANTIGUA AND BARBUDA",
+      "description": "ANTIGUA AND BARBUDA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 5,
+    "fields": {
+      "code": "AI",
+      "sort_order": 5,
+      "name": "ANGUILLA",
+      "description": "ANGUILLA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 6,
+    "fields": {
+      "code": "AL",
+      "sort_order": 6,
+      "name": "ALBANIA",
+      "description": "ALBANIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 7,
+    "fields": {
+      "code": "AM",
+      "sort_order": 7,
+      "name": "ARMENIA",
+      "description": "ARMENIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 8,
+    "fields": {
+      "code": "AN",
+      "sort_order": 8,
+      "name": "NETHERLANDS ANTILLES",
+      "description": "NETHERLANDS ANTILLES",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 9,
+    "fields": {
+      "code": "AO",
+      "sort_order": 9,
+      "name": "ANGOLA",
+      "description": "ANGOLA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 10,
+    "fields": {
+      "code": "AQ",
+      "sort_order": 10,
+      "name": "ANTARCTICA",
+      "description": "ANTARCTICA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 11,
+    "fields": {
+      "code": "AR",
+      "sort_order": 11,
+      "name": "ARGENTINA",
+      "description": "ARGENTINA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 12,
+    "fields": {
+      "code": "AS",
+      "sort_order": 12,
+      "name": "AMERICAN SAMOA",
+      "description": "AMERICAN SAMOA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 13,
+    "fields": {
+      "code": "AT",
+      "sort_order": 13,
+      "name": "AUSTRIA",
+      "description": "AUSTRIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 14,
+    "fields": {
+      "code": "AU",
+      "sort_order": 14,
+      "name": "AUSTRALIA",
+      "description": "AUSTRALIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 15,
+    "fields": {
+      "code": "AW",
+      "sort_order": 15,
+      "name": "ARUBA",
+      "description": "ARUBA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 16,
+    "fields": {
+      "code": "AX",
+      "sort_order": 16,
+      "name": "ALAND ISLANDS",
+      "description": "ALAND ISLANDS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 17,
+    "fields": {
+      "code": "AZ",
+      "sort_order": 17,
+      "name": "AZERBAIJAN",
+      "description": "AZERBAIJAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 18,
+    "fields": {
+      "code": "BA",
+      "sort_order": 18,
+      "name": "BOSNIA AND HERZEGOVINA",
+      "description": "BOSNIA AND HERZEGOVINA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 19,
+    "fields": {
+      "code": "BB",
+      "sort_order": 19,
+      "name": "BARBADOS",
+      "description": "BARBADOS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 20,
+    "fields": {
+      "code": "BD",
+      "sort_order": 20,
+      "name": "BANGLADESH",
+      "description": "BANGLADESH",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 21,
+    "fields": {
+      "code": "BE",
+      "sort_order": 21,
+      "name": "BELGIUM",
+      "description": "BELGIUM",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 22,
+    "fields": {
+      "code": "BF",
+      "sort_order": 22,
+      "name": "BURKINA FASO",
+      "description": "BURKINA FASO",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 23,
+    "fields": {
+      "code": "BG",
+      "sort_order": 23,
+      "name": "BULGARIA",
+      "description": "BULGARIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 24,
+    "fields": {
+      "code": "BH",
+      "sort_order": 24,
+      "name": "BAHRAIN",
+      "description": "BAHRAIN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 25,
+    "fields": {
+      "code": "BI",
+      "sort_order": 25,
+      "name": "BURUNDI",
+      "description": "BURUNDI",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 26,
+    "fields": {
+      "code": "BJ",
+      "sort_order": 26,
+      "name": "BENIN",
+      "description": "BENIN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 27,
+    "fields": {
+      "code": "BM",
+      "sort_order": 27,
+      "name": "BERMUDA",
+      "description": "BERMUDA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 28,
+    "fields": {
+      "code": "BN",
+      "sort_order": 28,
+      "name": "BRUNEI DARUSSALAM",
+      "description": "BRUNEI DARUSSALAM",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 29,
+    "fields": {
+      "code": "BO",
+      "sort_order": 29,
+      "name": "BOLIVIA",
+      "description": "BOLIVIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 30,
+    "fields": {
+      "code": "BR",
+      "sort_order": 30,
+      "name": "BRAZIL",
+      "description": "BRAZIL",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 31,
+    "fields": {
+      "code": "BS",
+      "sort_order": 31,
+      "name": "BAHAMAS",
+      "description": "BAHAMAS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 32,
+    "fields": {
+      "code": "BT",
+      "sort_order": 32,
+      "name": "BHUTAN",
+      "description": "BHUTAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 33,
+    "fields": {
+      "code": "BV",
+      "sort_order": 33,
+      "name": "BOUVET ISLAND",
+      "description": "BOUVET ISLAND",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 34,
+    "fields": {
+      "code": "BW",
+      "sort_order": 34,
+      "name": "BOTSWANA",
+      "description": "BOTSWANA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 35,
+    "fields": {
+      "code": "BY",
+      "sort_order": 35,
+      "name": "BELARUS",
+      "description": "BELARUS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 36,
+    "fields": {
+      "code": "BZ",
+      "sort_order": 36,
+      "name": "BELIZE",
+      "description": "BELIZE",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 37,
+    "fields": {
+      "code": "CA",
+      "sort_order": 37,
+      "name": "CANADA",
+      "description": "CANADA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 38,
+    "fields": {
+      "code": "CC",
+      "sort_order": 38,
+      "name": "COCOS (KEELING) ISLANDS",
+      "description": "COCOS (KEELING) ISLANDS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 39,
+    "fields": {
+      "code": "CD",
+      "sort_order": 39,
+      "name": "CONGO, DEMOCRATIC REPUBLIC",
+      "description": "CONGO, DEMOCRATIC REPUBLIC",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 40,
+    "fields": {
+      "code": "CF",
+      "sort_order": 40,
+      "name": "CENTRAL AFRICAN REPUBLIC",
+      "description": "CENTRAL AFRICAN REPUBLIC",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 41,
+    "fields": {
+      "code": "CG",
+      "sort_order": 41,
+      "name": "CONGO",
+      "description": "CONGO",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 42,
+    "fields": {
+      "code": "CH",
+      "sort_order": 42,
+      "name": "SWITZERLAND",
+      "description": "SWITZERLAND",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 43,
+    "fields": {
+      "code": "CI",
+      "sort_order": 43,
+      "name": "COTE D'IVOIRE (IVORY COAST)",
+      "description": "COTE D'IVOIRE (IVORY COAST)",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 44,
+    "fields": {
+      "code": "CK",
+      "sort_order": 44,
+      "name": "COOK ISLANDS",
+      "description": "COOK ISLANDS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 45,
+    "fields": {
+      "code": "CL",
+      "sort_order": 45,
+      "name": "CHILE",
+      "description": "CHILE",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 46,
+    "fields": {
+      "code": "CM",
+      "sort_order": 46,
+      "name": "CAMEROON",
+      "description": "CAMEROON",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 47,
+    "fields": {
+      "code": "CN",
+      "sort_order": 47,
+      "name": "CHINA",
+      "description": "CHINA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 48,
+    "fields": {
+      "code": "CO",
+      "sort_order": 48,
+      "name": "COLOMBIA",
+      "description": "COLOMBIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 49,
+    "fields": {
+      "code": "CR",
+      "sort_order": 49,
+      "name": "COSTA RICA",
+      "description": "COSTA RICA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 50,
+    "fields": {
+      "code": "CS",
+      "sort_order": 50,
+      "name": "CZECHOSLOVAKIA (FORMER)",
+      "description": "CZECHOSLOVAKIA (FORMER)",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 51,
+    "fields": {
+      "code": "CU",
+      "sort_order": 51,
+      "name": "CUBA",
+      "description": "CUBA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 52,
+    "fields": {
+      "code": "CV",
+      "sort_order": 52,
+      "name": "CAPE VERDE",
+      "description": "CAPE VERDE",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 53,
+    "fields": {
+      "code": "CX",
+      "sort_order": 53,
+      "name": "CHRISTMAS ISLAND",
+      "description": "CHRISTMAS ISLAND",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 54,
+    "fields": {
+      "code": "CY",
+      "sort_order": 54,
+      "name": "CYPRUS",
+      "description": "CYPRUS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 55,
+    "fields": {
+      "code": "CZ",
+      "sort_order": 55,
+      "name": "CZECH REPUBLIC",
+      "description": "CZECH REPUBLIC",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 56,
+    "fields": {
+      "code": "DE",
+      "sort_order": 56,
+      "name": "GERMANY",
+      "description": "GERMANY",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 57,
+    "fields": {
+      "code": "DJ",
+      "sort_order": 57,
+      "name": "DJIBOUTI",
+      "description": "DJIBOUTI",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 58,
+    "fields": {
+      "code": "DK",
+      "sort_order": 58,
+      "name": "DENMARK",
+      "description": "DENMARK",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 59,
+    "fields": {
+      "code": "DM",
+      "sort_order": 59,
+      "name": "DOMINICA",
+      "description": "DOMINICA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 60,
+    "fields": {
+      "code": "DO",
+      "sort_order": 60,
+      "name": "DOMINICAN REPUBLIC",
+      "description": "DOMINICAN REPUBLIC",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 61,
+    "fields": {
+      "code": "DZ",
+      "sort_order": 61,
+      "name": "ALGERIA",
+      "description": "ALGERIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 62,
+    "fields": {
+      "code": "EC",
+      "sort_order": 62,
+      "name": "ECUADOR",
+      "description": "ECUADOR",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 63,
+    "fields": {
+      "code": "EE",
+      "sort_order": 63,
+      "name": "ESTONIA",
+      "description": "ESTONIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 64,
+    "fields": {
+      "code": "EG",
+      "sort_order": 64,
+      "name": "EGYPT",
+      "description": "EGYPT",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 65,
+    "fields": {
+      "code": "EH",
+      "sort_order": 65,
+      "name": "WESTERN SAHARA",
+      "description": "WESTERN SAHARA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 66,
+    "fields": {
+      "code": "ER",
+      "sort_order": 66,
+      "name": "ERITREA",
+      "description": "ERITREA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 67,
+    "fields": {
+      "code": "ES",
+      "sort_order": 67,
+      "name": "SPAIN",
+      "description": "SPAIN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 68,
+    "fields": {
+      "code": "ET",
+      "sort_order": 68,
+      "name": "ETHIOPIA",
+      "description": "ETHIOPIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 69,
+    "fields": {
+      "code": "EU",
+      "sort_order": 69,
+      "name": "EUROPEAN UNION",
+      "description": "EUROPEAN UNION",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 70,
+    "fields": {
+      "code": "FI",
+      "sort_order": 70,
+      "name": "FINLAND",
+      "description": "FINLAND",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 71,
+    "fields": {
+      "code": "FJ",
+      "sort_order": 71,
+      "name": "FIJI",
+      "description": "FIJI",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 72,
+    "fields": {
+      "code": "FK",
+      "sort_order": 72,
+      "name": "FALKLAND ISLANDS (MALVINAS)",
+      "description": "FALKLAND ISLANDS (MALVINAS)",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 73,
+    "fields": {
+      "code": "FM",
+      "sort_order": 73,
+      "name": "MICRONESIA",
+      "description": "MICRONESIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 74,
+    "fields": {
+      "code": "FO",
+      "sort_order": 74,
+      "name": "FAROE ISLANDS",
+      "description": "FAROE ISLANDS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 75,
+    "fields": {
+      "code": "FR",
+      "sort_order": 75,
+      "name": "FRANCE",
+      "description": "FRANCE",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 76,
+    "fields": {
+      "code": "FX",
+      "sort_order": 76,
+      "name": "FRANCE, METROPOLITAN",
+      "description": "FRANCE, METROPOLITAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 77,
+    "fields": {
+      "code": "GA",
+      "sort_order": 77,
+      "name": "GABON",
+      "description": "GABON",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 78,
+    "fields": {
+      "code": "GB",
+      "sort_order": 78,
+      "name": "GREAT BRITAIN (UK)",
+      "description": "GREAT BRITAIN (UK)",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 79,
+    "fields": {
+      "code": "GD",
+      "sort_order": 79,
+      "name": "GRENADA",
+      "description": "GRENADA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 80,
+    "fields": {
+      "code": "GE",
+      "sort_order": 80,
+      "name": "GEORGIA",
+      "description": "GEORGIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 81,
+    "fields": {
+      "code": "GF",
+      "sort_order": 81,
+      "name": "FRENCH GUIANA",
+      "description": "FRENCH GUIANA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 82,
+    "fields": {
+      "code": "GG",
+      "sort_order": 82,
+      "name": "GUERNSEY",
+      "description": "GUERNSEY",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 83,
+    "fields": {
+      "code": "GH",
+      "sort_order": 83,
+      "name": "GHANA",
+      "description": "GHANA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 84,
+    "fields": {
+      "code": "GI",
+      "sort_order": 84,
+      "name": "GIBRALTAR",
+      "description": "GIBRALTAR",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 85,
+    "fields": {
+      "code": "GL",
+      "sort_order": 85,
+      "name": "GREENLAND",
+      "description": "GREENLAND",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 86,
+    "fields": {
+      "code": "GM",
+      "sort_order": 86,
+      "name": "GAMBIA",
+      "description": "GAMBIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 87,
+    "fields": {
+      "code": "GN",
+      "sort_order": 87,
+      "name": "GUINEA",
+      "description": "GUINEA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 88,
+    "fields": {
+      "code": "GP",
+      "sort_order": 88,
+      "name": "GUADELOUPE",
+      "description": "GUADELOUPE",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 89,
+    "fields": {
+      "code": "GQ",
+      "sort_order": 89,
+      "name": "EQUATORIAL GUINEA",
+      "description": "EQUATORIAL GUINEA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 90,
+    "fields": {
+      "code": "GR",
+      "sort_order": 90,
+      "name": "GREECE",
+      "description": "GREECE",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 91,
+    "fields": {
+      "code": "GS",
+      "sort_order": 91,
+      "name": "S. GEORGIA AND S. SANDWICH ISLS.",
+      "description": "S. GEORGIA AND S. SANDWICH ISLS.",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 92,
+    "fields": {
+      "code": "GT",
+      "sort_order": 92,
+      "name": "GUATEMALA",
+      "description": "GUATEMALA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 93,
+    "fields": {
+      "code": "GU",
+      "sort_order": 93,
+      "name": "GUAM",
+      "description": "GUAM",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 94,
+    "fields": {
+      "code": "GW",
+      "sort_order": 94,
+      "name": "GUINEA BISSAU",
+      "description": "GUINEA BISSAU",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 95,
+    "fields": {
+      "code": "GY",
+      "sort_order": 95,
+      "name": "GUYANA",
+      "description": "GUYANA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 96,
+    "fields": {
+      "code": "HK",
+      "sort_order": 96,
+      "name": "HONG KONG",
+      "description": "HONG KONG",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 97,
+    "fields": {
+      "code": "HM",
+      "sort_order": 97,
+      "name": "HEARD AND MCDONALD ISLANDS",
+      "description": "HEARD AND MCDONALD ISLANDS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 98,
+    "fields": {
+      "code": "HN",
+      "sort_order": 98,
+      "name": "HONDURAS",
+      "description": "HONDURAS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 99,
+    "fields": {
+      "code": "HR",
+      "sort_order": 99,
+      "name": "CROATIA (HRVATSKA)",
+      "description": "CROATIA (HRVATSKA)",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 100,
+    "fields": {
+      "code": "HT",
+      "sort_order": 100,
+      "name": "HAITI",
+      "description": "HAITI",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 101,
+    "fields": {
+      "code": "HU",
+      "sort_order": 101,
+      "name": "HUNGARY",
+      "description": "HUNGARY",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 102,
+    "fields": {
+      "code": "ID",
+      "sort_order": 102,
+      "name": "INDONESIA",
+      "description": "INDONESIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 103,
+    "fields": {
+      "code": "IE",
+      "sort_order": 103,
+      "name": "IRELAND",
+      "description": "IRELAND",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 104,
+    "fields": {
+      "code": "IL",
+      "sort_order": 104,
+      "name": "ISRAEL",
+      "description": "ISRAEL",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 105,
+    "fields": {
+      "code": "IM",
+      "sort_order": 105,
+      "name": "ISLE OF MAN",
+      "description": "ISLE OF MAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 106,
+    "fields": {
+      "code": "IN",
+      "sort_order": 106,
+      "name": "INDIA",
+      "description": "INDIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 107,
+    "fields": {
+      "code": "IO",
+      "sort_order": 107,
+      "name": "BRITISH INDIAN OCEAN TERRITORY",
+      "description": "BRITISH INDIAN OCEAN TERRITORY",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 108,
+    "fields": {
+      "code": "IQ",
+      "sort_order": 108,
+      "name": "IRAQ",
+      "description": "IRAQ",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 109,
+    "fields": {
+      "code": "IR",
+      "sort_order": 109,
+      "name": "IRAN",
+      "description": "IRAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 110,
+    "fields": {
+      "code": "IS",
+      "sort_order": 110,
+      "name": "ICELAND",
+      "description": "ICELAND",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 111,
+    "fields": {
+      "code": "IT",
+      "sort_order": 111,
+      "name": "ITALY",
+      "description": "ITALY",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 112,
+    "fields": {
+      "code": "JE",
+      "sort_order": 112,
+      "name": "JERSEY",
+      "description": "JERSEY",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 113,
+    "fields": {
+      "code": "JM",
+      "sort_order": 113,
+      "name": "JAMAICA",
+      "description": "JAMAICA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 114,
+    "fields": {
+      "code": "JO",
+      "sort_order": 114,
+      "name": "JORDAN",
+      "description": "JORDAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 115,
+    "fields": {
+      "code": "JP",
+      "sort_order": 115,
+      "name": "JAPAN",
+      "description": "JAPAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 116,
+    "fields": {
+      "code": "KE",
+      "sort_order": 116,
+      "name": "KENYA",
+      "description": "KENYA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 117,
+    "fields": {
+      "code": "KG",
+      "sort_order": 117,
+      "name": "KYRGYZSTAN",
+      "description": "KYRGYZSTAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 118,
+    "fields": {
+      "code": "KH",
+      "sort_order": 118,
+      "name": "CAMBODIA",
+      "description": "CAMBODIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 119,
+    "fields": {
+      "code": "KI",
+      "sort_order": 119,
+      "name": "KIRIBATI",
+      "description": "KIRIBATI",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 120,
+    "fields": {
+      "code": "KM",
+      "sort_order": 120,
+      "name": "COMOROS",
+      "description": "COMOROS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 121,
+    "fields": {
+      "code": "KN",
+      "sort_order": 121,
+      "name": "SAINT KITTS AND NEVIS",
+      "description": "SAINT KITTS AND NEVIS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 122,
+    "fields": {
+      "code": "KP",
+      "sort_order": 122,
+      "name": "NORTH KOREA",
+      "description": "NORTH KOREA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 123,
+    "fields": {
+      "code": "KR",
+      "sort_order": 123,
+      "name": "SOUTH KOREA",
+      "description": "SOUTH KOREA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 124,
+    "fields": {
+      "code": "KW",
+      "sort_order": 124,
+      "name": "KUWAIT",
+      "description": "KUWAIT",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 125,
+    "fields": {
+      "code": "KY",
+      "sort_order": 125,
+      "name": "CAYMAN ISLANDS",
+      "description": "CAYMAN ISLANDS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 126,
+    "fields": {
+      "code": "KZ",
+      "sort_order": 126,
+      "name": "KAZAKHSTAN",
+      "description": "KAZAKHSTAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 127,
+    "fields": {
+      "code": "LA",
+      "sort_order": 127,
+      "name": "LAOS",
+      "description": "LAOS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 128,
+    "fields": {
+      "code": "LB",
+      "sort_order": 128,
+      "name": "LEBANON",
+      "description": "LEBANON",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 129,
+    "fields": {
+      "code": "LC",
+      "sort_order": 129,
+      "name": "SAINT LUCIA",
+      "description": "SAINT LUCIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 130,
+    "fields": {
+      "code": "LI",
+      "sort_order": 130,
+      "name": "LIECHTENSTEIN",
+      "description": "LIECHTENSTEIN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 131,
+    "fields": {
+      "code": "LK",
+      "sort_order": 131,
+      "name": "SRI LANKA",
+      "description": "SRI LANKA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 132,
+    "fields": {
+      "code": "LR",
+      "sort_order": 132,
+      "name": "LIBERIA",
+      "description": "LIBERIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 133,
+    "fields": {
+      "code": "LS",
+      "sort_order": 133,
+      "name": "LESOTHO",
+      "description": "LESOTHO",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 134,
+    "fields": {
+      "code": "LT",
+      "sort_order": 134,
+      "name": "LITHUANIA",
+      "description": "LITHUANIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 135,
+    "fields": {
+      "code": "LU",
+      "sort_order": 135,
+      "name": "LUXEMBOURG",
+      "description": "LUXEMBOURG",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 136,
+    "fields": {
+      "code": "LV",
+      "sort_order": 136,
+      "name": "LATVIA",
+      "description": "LATVIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 137,
+    "fields": {
+      "code": "LY",
+      "sort_order": 137,
+      "name": "LIBYA",
+      "description": "LIBYA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 138,
+    "fields": {
+      "code": "MA",
+      "sort_order": 138,
+      "name": "MOROCCO",
+      "description": "MOROCCO",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 139,
+    "fields": {
+      "code": "MC",
+      "sort_order": 139,
+      "name": "MONACO",
+      "description": "MONACO",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 140,
+    "fields": {
+      "code": "MD",
+      "sort_order": 140,
+      "name": "MOLDOVA",
+      "description": "MOLDOVA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 141,
+    "fields": {
+      "code": "ME",
+      "sort_order": 141,
+      "name": "MONTENEGRO",
+      "description": "MONTENEGRO",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 142,
+    "fields": {
+      "code": "MG",
+      "sort_order": 142,
+      "name": "MADAGASCAR",
+      "description": "MADAGASCAR",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 143,
+    "fields": {
+      "code": "MH",
+      "sort_order": 143,
+      "name": "MARSHALL ISLANDS",
+      "description": "MARSHALL ISLANDS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 144,
+    "fields": {
+      "code": "MK",
+      "sort_order": 144,
+      "name": "F.Y.R.O.M. (MACEDONIA)",
+      "description": "F.Y.R.O.M. (MACEDONIA)",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 145,
+    "fields": {
+      "code": "ML",
+      "sort_order": 145,
+      "name": "MALI",
+      "description": "MALI",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 146,
+    "fields": {
+      "code": "MM",
+      "sort_order": 146,
+      "name": "MYANMAR",
+      "description": "MYANMAR",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 147,
+    "fields": {
+      "code": "MN",
+      "sort_order": 147,
+      "name": "MONGOLIA",
+      "description": "MONGOLIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 148,
+    "fields": {
+      "code": "MO",
+      "sort_order": 148,
+      "name": "MACAU",
+      "description": "MACAU",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 149,
+    "fields": {
+      "code": "MP",
+      "sort_order": 149,
+      "name": "NORTHERN MARIANA ISLANDS",
+      "description": "NORTHERN MARIANA ISLANDS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 150,
+    "fields": {
+      "code": "MQ",
+      "sort_order": 150,
+      "name": "MARTINIQUE",
+      "description": "MARTINIQUE",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 151,
+    "fields": {
+      "code": "MR",
+      "sort_order": 151,
+      "name": "MAURITANIA",
+      "description": "MAURITANIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 152,
+    "fields": {
+      "code": "MS",
+      "sort_order": 152,
+      "name": "MONTSERRAT",
+      "description": "MONTSERRAT",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 153,
+    "fields": {
+      "code": "MT",
+      "sort_order": 153,
+      "name": "MALTA",
+      "description": "MALTA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 154,
+    "fields": {
+      "code": "MU",
+      "sort_order": 154,
+      "name": "MAURITIUS",
+      "description": "MAURITIUS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 155,
+    "fields": {
+      "code": "MV",
+      "sort_order": 155,
+      "name": "MALDIVES",
+      "description": "MALDIVES",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 156,
+    "fields": {
+      "code": "MW",
+      "sort_order": 156,
+      "name": "MALAWI",
+      "description": "MALAWI",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 157,
+    "fields": {
+      "code": "MX",
+      "sort_order": 157,
+      "name": "MEXICO",
+      "description": "MEXICO",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 158,
+    "fields": {
+      "code": "MY",
+      "sort_order": 158,
+      "name": "MALAYSIA",
+      "description": "MALAYSIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 159,
+    "fields": {
+      "code": "MZ",
+      "sort_order": 159,
+      "name": "MOZAMBIQUE",
+      "description": "MOZAMBIQUE",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 160,
+    "fields": {
+      "code": "NA",
+      "sort_order": 160,
+      "name": "NAMIBIA",
+      "description": "NAMIBIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 161,
+    "fields": {
+      "code": "NC",
+      "sort_order": 161,
+      "name": "NEW CALEDONIA",
+      "description": "NEW CALEDONIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 162,
+    "fields": {
+      "code": "NE",
+      "sort_order": 162,
+      "name": "NIGER",
+      "description": "NIGER",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 163,
+    "fields": {
+      "code": "NF",
+      "sort_order": 163,
+      "name": "NORFOLK ISLAND",
+      "description": "NORFOLK ISLAND",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 164,
+    "fields": {
+      "code": "NG",
+      "sort_order": 164,
+      "name": "NIGERIA",
+      "description": "NIGERIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 165,
+    "fields": {
+      "code": "NI",
+      "sort_order": 165,
+      "name": "NICARAGUA",
+      "description": "NICARAGUA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 166,
+    "fields": {
+      "code": "NL",
+      "sort_order": 166,
+      "name": "NETHERLANDS",
+      "description": "NETHERLANDS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 167,
+    "fields": {
+      "code": "NO",
+      "sort_order": 167,
+      "name": "NORWAY",
+      "description": "NORWAY",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 168,
+    "fields": {
+      "code": "NP",
+      "sort_order": 168,
+      "name": "NEPAL",
+      "description": "NEPAL",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 169,
+    "fields": {
+      "code": "NR",
+      "sort_order": 169,
+      "name": "NAURU",
+      "description": "NAURU",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 170,
+    "fields": {
+      "code": "NT",
+      "sort_order": 170,
+      "name": "NEUTRAL ZONE",
+      "description": "NEUTRAL ZONE",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 171,
+    "fields": {
+      "code": "NU",
+      "sort_order": 171,
+      "name": "NIUE",
+      "description": "NIUE",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 172,
+    "fields": {
+      "code": "NZ",
+      "sort_order": 172,
+      "name": "NEW ZEALAND (AOTEAROA)",
+      "description": "NEW ZEALAND (AOTEAROA)",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 173,
+    "fields": {
+      "code": "OM",
+      "sort_order": 173,
+      "name": "OMAN",
+      "description": "OMAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 174,
+    "fields": {
+      "code": "PA",
+      "sort_order": 174,
+      "name": "PANAMA",
+      "description": "PANAMA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 175,
+    "fields": {
+      "code": "PE",
+      "sort_order": 175,
+      "name": "PERU",
+      "description": "PERU",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 176,
+    "fields": {
+      "code": "PF",
+      "sort_order": 176,
+      "name": "FRENCH POLYNESIA",
+      "description": "FRENCH POLYNESIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 177,
+    "fields": {
+      "code": "PG",
+      "sort_order": 177,
+      "name": "PAPUA NEW GUINEA",
+      "description": "PAPUA NEW GUINEA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 178,
+    "fields": {
+      "code": "PH",
+      "sort_order": 178,
+      "name": "PHILIPPINES",
+      "description": "PHILIPPINES",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 179,
+    "fields": {
+      "code": "PK",
+      "sort_order": 179,
+      "name": "PAKISTAN",
+      "description": "PAKISTAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 180,
+    "fields": {
+      "code": "PL",
+      "sort_order": 180,
+      "name": "POLAND",
+      "description": "POLAND",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 181,
+    "fields": {
+      "code": "PM",
+      "sort_order": 181,
+      "name": "ST. PIERRE AND MIQUELON",
+      "description": "ST. PIERRE AND MIQUELON",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 182,
+    "fields": {
+      "code": "PN",
+      "sort_order": 182,
+      "name": "PITCAIRN",
+      "description": "PITCAIRN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 183,
+    "fields": {
+      "code": "PR",
+      "sort_order": 183,
+      "name": "PUERTO RICO",
+      "description": "PUERTO RICO",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 184,
+    "fields": {
+      "code": "PS",
+      "sort_order": 184,
+      "name": "PALESTINIAN TERRITORY, OCCUPIED",
+      "description": "PALESTINIAN TERRITORY, OCCUPIED",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 185,
+    "fields": {
+      "code": "PT",
+      "sort_order": 185,
+      "name": "PORTUGAL",
+      "description": "PORTUGAL",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 186,
+    "fields": {
+      "code": "PW",
+      "sort_order": 186,
+      "name": "PALAU",
+      "description": "PALAU",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 187,
+    "fields": {
+      "code": "PY",
+      "sort_order": 187,
+      "name": "PARAGUAY",
+      "description": "PARAGUAY",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 188,
+    "fields": {
+      "code": "QA",
+      "sort_order": 188,
+      "name": "QATAR",
+      "description": "QATAR",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 189,
+    "fields": {
+      "code": "RE",
+      "sort_order": 189,
+      "name": "REUNION",
+      "description": "REUNION",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 190,
+    "fields": {
+      "code": "RO",
+      "sort_order": 190,
+      "name": "ROMANIA",
+      "description": "ROMANIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 191,
+    "fields": {
+      "code": "RS",
+      "sort_order": 191,
+      "name": "SERBIA",
+      "description": "SERBIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 192,
+    "fields": {
+      "code": "RU",
+      "sort_order": 192,
+      "name": "RUSSIAN FEDERATION",
+      "description": "RUSSIAN FEDERATION",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 193,
+    "fields": {
+      "code": "RW",
+      "sort_order": 193,
+      "name": "RWANDA",
+      "description": "RWANDA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 194,
+    "fields": {
+      "code": "SA",
+      "sort_order": 194,
+      "name": "SAUDI ARABIA",
+      "description": "SAUDI ARABIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 195,
+    "fields": {
+      "code": "SB",
+      "sort_order": 195,
+      "name": "SOLOMON ISLANDS",
+      "description": "SOLOMON ISLANDS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 196,
+    "fields": {
+      "code": "SC",
+      "sort_order": 196,
+      "name": "SEYCHELLES",
+      "description": "SEYCHELLES",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 197,
+    "fields": {
+      "code": "SD",
+      "sort_order": 197,
+      "name": "SUDAN",
+      "description": "SUDAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 198,
+    "fields": {
+      "code": "SE",
+      "sort_order": 198,
+      "name": "SWEDEN",
+      "description": "SWEDEN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 199,
+    "fields": {
+      "code": "SG",
+      "sort_order": 199,
+      "name": "SINGAPORE",
+      "description": "SINGAPORE",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 200,
+    "fields": {
+      "code": "SH",
+      "sort_order": 200,
+      "name": "ST. HELENA",
+      "description": "ST. HELENA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 201,
+    "fields": {
+      "code": "SI",
+      "sort_order": 201,
+      "name": "SLOVENIA",
+      "description": "SLOVENIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 202,
+    "fields": {
+      "code": "SJ",
+      "sort_order": 202,
+      "name": "SVALBARD & JAN MAYEN ISLANDS",
+      "description": "SVALBARD & JAN MAYEN ISLANDS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 203,
+    "fields": {
+      "code": "SK",
+      "sort_order": 203,
+      "name": "SLOVAK REPUBLIC",
+      "description": "SLOVAK REPUBLIC",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 204,
+    "fields": {
+      "code": "SL",
+      "sort_order": 204,
+      "name": "SIERRA LEONE",
+      "description": "SIERRA LEONE",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 205,
+    "fields": {
+      "code": "SM",
+      "sort_order": 205,
+      "name": "SAN MARINO",
+      "description": "SAN MARINO",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 206,
+    "fields": {
+      "code": "SN",
+      "sort_order": 206,
+      "name": "SENEGAL",
+      "description": "SENEGAL",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 207,
+    "fields": {
+      "code": "SO",
+      "sort_order": 207,
+      "name": "SOMALIA",
+      "description": "SOMALIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 208,
+    "fields": {
+      "code": "SR",
+      "sort_order": 208,
+      "name": "SURINAME",
+      "description": "SURINAME",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 209,
+    "fields": {
+      "code": "ST",
+      "sort_order": 209,
+      "name": "SAO TOME AND PRINCIPE",
+      "description": "SAO TOME AND PRINCIPE",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 210,
+    "fields": {
+      "code": "SU",
+      "sort_order": 210,
+      "name": "USSR (FORMER)",
+      "description": "USSR (FORMER)",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 211,
+    "fields": {
+      "code": "SV",
+      "sort_order": 211,
+      "name": "EL SALVADOR",
+      "description": "EL SALVADOR",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 212,
+    "fields": {
+      "code": "SY",
+      "sort_order": 212,
+      "name": "SYRIA",
+      "description": "SYRIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 213,
+    "fields": {
+      "code": "SZ",
+      "sort_order": 213,
+      "name": "SWAZILAND",
+      "description": "SWAZILAND",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 214,
+    "fields": {
+      "code": "TC",
+      "sort_order": 214,
+      "name": "TURKS AND CAICOS ISLANDS",
+      "description": "TURKS AND CAICOS ISLANDS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 215,
+    "fields": {
+      "code": "TD",
+      "sort_order": 215,
+      "name": "CHAD",
+      "description": "CHAD",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 216,
+    "fields": {
+      "code": "TF",
+      "sort_order": 216,
+      "name": "FRENCH SOUTHERN TERRITORIES",
+      "description": "FRENCH SOUTHERN TERRITORIES",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 217,
+    "fields": {
+      "code": "TG",
+      "sort_order": 217,
+      "name": "TOGO",
+      "description": "TOGO",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 218,
+    "fields": {
+      "code": "TH",
+      "sort_order": 218,
+      "name": "THAILAND",
+      "description": "THAILAND",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 219,
+    "fields": {
+      "code": "TJ",
+      "sort_order": 219,
+      "name": "TAJIKISTAN",
+      "description": "TAJIKISTAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 220,
+    "fields": {
+      "code": "TK",
+      "sort_order": 220,
+      "name": "TOKELAU",
+      "description": "TOKELAU",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 221,
+    "fields": {
+      "code": "TM",
+      "sort_order": 221,
+      "name": "TURKMENISTAN",
+      "description": "TURKMENISTAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 222,
+    "fields": {
+      "code": "TN",
+      "sort_order": 222,
+      "name": "TUNISIA",
+      "description": "TUNISIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 223,
+    "fields": {
+      "code": "TO",
+      "sort_order": 223,
+      "name": "TONGA",
+      "description": "TONGA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 224,
+    "fields": {
+      "code": "TP",
+      "sort_order": 224,
+      "name": "EAST TIMOR",
+      "description": "EAST TIMOR",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 225,
+    "fields": {
+      "code": "TR",
+      "sort_order": 225,
+      "name": "TURKEY",
+      "description": "TURKEY",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 226,
+    "fields": {
+      "code": "TT",
+      "sort_order": 226,
+      "name": "TRINIDAD AND TOBAGO",
+      "description": "TRINIDAD AND TOBAGO",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 227,
+    "fields": {
+      "code": "TV",
+      "sort_order": 227,
+      "name": "TUVALU",
+      "description": "TUVALU",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 228,
+    "fields": {
+      "code": "TW",
+      "sort_order": 228,
+      "name": "TAIWAN",
+      "description": "TAIWAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 229,
+    "fields": {
+      "code": "TZ",
+      "sort_order": 229,
+      "name": "TANZANIA",
+      "description": "TANZANIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 230,
+    "fields": {
+      "code": "UA",
+      "sort_order": 230,
+      "name": "UKRAINE",
+      "description": "UKRAINE",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 231,
+    "fields": {
+      "code": "UG",
+      "sort_order": 231,
+      "name": "UGANDA",
+      "description": "UGANDA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 232,
+    "fields": {
+      "code": "UK",
+      "sort_order": 232,
+      "name": "UNITED KINGDOM",
+      "description": "UNITED KINGDOM",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 233,
+    "fields": {
+      "code": "UM",
+      "sort_order": 233,
+      "name": "US MINOR OUTLYING ISLANDS",
+      "description": "US MINOR OUTLYING ISLANDS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 234,
+    "fields": {
+      "code": "US",
+      "sort_order": 234,
+      "name": "UNITED STATES",
+      "description": "UNITED STATES",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 235,
+    "fields": {
+      "code": "UY",
+      "sort_order": 235,
+      "name": "URUGUAY",
+      "description": "URUGUAY",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 236,
+    "fields": {
+      "code": "UZ",
+      "sort_order": 236,
+      "name": "UZBEKISTAN",
+      "description": "UZBEKISTAN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 237,
+    "fields": {
+      "code": "VA",
+      "sort_order": 237,
+      "name": "VATICAN CITY STATE (HOLY SEE)",
+      "description": "VATICAN CITY STATE (HOLY SEE)",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 238,
+    "fields": {
+      "code": "VC",
+      "sort_order": 238,
+      "name": "SAINT VINCENT & THE GRENADINES",
+      "description": "SAINT VINCENT & THE GRENADINES",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 239,
+    "fields": {
+      "code": "VE",
+      "sort_order": 239,
+      "name": "VENEZUELA",
+      "description": "VENEZUELA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 240,
+    "fields": {
+      "code": "VG",
+      "sort_order": 240,
+      "name": "BRITISH VIRGIN ISLANDS",
+      "description": "BRITISH VIRGIN ISLANDS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 241,
+    "fields": {
+      "code": "VI",
+      "sort_order": 241,
+      "name": "VIRGIN ISLANDS (U.S.)",
+      "description": "VIRGIN ISLANDS (U.S.)",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 242,
+    "fields": {
+      "code": "VN",
+      "sort_order": 242,
+      "name": "VIET NAM",
+      "description": "VIET NAM",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 243,
+    "fields": {
+      "code": "VU",
+      "sort_order": 243,
+      "name": "VANUATU",
+      "description": "VANUATU",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 244,
+    "fields": {
+      "code": "WF",
+      "sort_order": 244,
+      "name": "WALLIS AND FUTUNA ISLANDS",
+      "description": "WALLIS AND FUTUNA ISLANDS",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 245,
+    "fields": {
+      "code": "WS",
+      "sort_order": 245,
+      "name": "SAMOA",
+      "description": "SAMOA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 246,
+    "fields": {
+      "code": "YE",
+      "sort_order": 246,
+      "name": "YEMEN",
+      "description": "YEMEN",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 247,
+    "fields": {
+      "code": "YT",
+      "sort_order": 247,
+      "name": "MAYOTTE",
+      "description": "MAYOTTE",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 248,
+    "fields": {
+      "code": "YU",
+      "sort_order": 248,
+      "name": "SERBIA AND MONTENEGRO (FORMER)",
+      "description": "SERBIA AND MONTENEGRO (FORMER)",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 249,
+    "fields": {
+      "code": "ZA",
+      "sort_order": 249,
+      "name": "SOUTH AFRICA",
+      "description": "SOUTH AFRICA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 250,
+    "fields": {
+      "code": "ZM",
+      "sort_order": 250,
+      "name": "ZAMBIA",
+      "description": "ZAMBIA",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 251,
+    "fields": {
+      "code": "ZR",
+      "sort_order": 251,
+      "name": "(ZAIRE) SEE CD CONGO, DEMOCRATIC REPUBLIC",
+      "description": "(ZAIRE) SEE CD CONGO, DEMOCRATIC REPUBLIC",
+      "remark": ""
+    }
+  },
+  {
+    "model": "main.country",
+    "pk": 252,
+    "fields": {
+      "code": "ZW",
+      "sort_order": 252,
+      "name": "ZIMBABWE",
+      "description": "ZIMBABWE",
+      "remark": ""
+    }
+  }
+]

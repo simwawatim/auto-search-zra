@@ -1,0 +1,830 @@
+[
+  {
+    "model": "main.unitofmeasure",
+    "pk": 1,
+    "fields": {
+      "code": "4B",
+      "code_name": "Pair",
+      "code_description": "Pair"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 2,
+    "fields": {
+      "code": "AV",
+      "code_name": "Cap",
+      "code_description": "Cap"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 3,
+    "fields": {
+      "code": "BA",
+      "code_name": "Barrel",
+      "code_description": "Barrel"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 4,
+    "fields": {
+      "code": "BE",
+      "code_name": "bundle",
+      "code_description": "bundle"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 5,
+    "fields": {
+      "code": "BG",
+      "code_name": "bag",
+      "code_description": "bag"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 6,
+    "fields": {
+      "code": "BL",
+      "code_name": "block",
+      "code_description": "block"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 7,
+    "fields": {
+      "code": "BLL",
+      "code_name": "BLL Barrel",
+      "code_description": "BLL Barrel (petroleum) (158,987 dm3)"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 8,
+    "fields": {
+      "code": "BX",
+      "code_name": "box",
+      "code_description": "box"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 9,
+    "fields": {
+      "code": "CA",
+      "code_name": "Can",
+      "code_description": "Can"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 10,
+    "fields": {
+      "code": "CEL",
+      "code_name": "Cell",
+      "code_description": "Cell"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 11,
+    "fields": {
+      "code": "CMT",
+      "code_name": "centimetre",
+      "code_description": "centimetre"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 12,
+    "fields": {
+      "code": "CR",
+      "code_name": "CARAT",
+      "code_description": "CARAT"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 13,
+    "fields": {
+      "code": "DR",
+      "code_name": "Drum",
+      "code_description": "Drum"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 14,
+    "fields": {
+      "code": "DZ",
+      "code_name": "Dozen",
+      "code_description": "Dozen"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 15,
+    "fields": {
+      "code": "GLL",
+      "code_name": "Gallon",
+      "code_description": "Gallon"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 16,
+    "fields": {
+      "code": "GRM",
+      "code_name": "Gram",
+      "code_description": "Gram"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 17,
+    "fields": {
+      "code": "GRO",
+      "code_name": "Gross",
+      "code_description": "Gross"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 18,
+    "fields": {
+      "code": "KG",
+      "code_name": "Kilo-Gramme",
+      "code_description": "Kilo-Gramme"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 19,
+    "fields": {
+      "code": "KTM",
+      "code_name": "kilometre",
+      "code_description": "kilometre"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 20,
+    "fields": {
+      "code": "KWT",
+      "code_name": "kilowatt",
+      "code_description": "kilowatt"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 21,
+    "fields": {
+      "code": "L",
+      "code_name": "Litre",
+      "code_description": "Litre"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 22,
+    "fields": {
+      "code": "LBR",
+      "code_name": "pound",
+      "code_description": "pound"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 23,
+    "fields": {
+      "code": "LK",
+      "code_name": "link",
+      "code_description": "link"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 24,
+    "fields": {
+      "code": "LTR",
+      "code_name": "Litre",
+      "code_description": "Litre"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 25,
+    "fields": {
+      "code": "M",
+      "code_name": "Metre",
+      "code_description": "Metre"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 26,
+    "fields": {
+      "code": "M2",
+      "code_name": "Square Metre",
+      "code_description": "Square Metre"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 27,
+    "fields": {
+      "code": "M3",
+      "code_name": "Cubic Metre",
+      "code_description": "Cubic Metre"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 28,
+    "fields": {
+      "code": "MGM",
+      "code_name": "milligram",
+      "code_description": "milligram"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 29,
+    "fields": {
+      "code": "MTR",
+      "code_name": "metre",
+      "code_description": "metre"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 30,
+    "fields": {
+      "code": "MWT",
+      "code_name": "megawatt hour",
+      "code_description": "megawatt hour (1000 kW.h)"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 31,
+    "fields": {
+      "code": "NO",
+      "code_name": "Number",
+      "code_description": "Number"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 32,
+    "fields": {
+      "code": "NX",
+      "code_name": "part per thousand",
+      "code_description": "part per thousand"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 33,
+    "fields": {
+      "code": "PA",
+      "code_name": "packet",
+      "code_description": "packet"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 34,
+    "fields": {
+      "code": "PG",
+      "code_name": "plate",
+      "code_description": "plate"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 35,
+    "fields": {
+      "code": "PR",
+      "code_name": "pair",
+      "code_description": "pair"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 36,
+    "fields": {
+      "code": "RL",
+      "code_name": "reel",
+      "code_description": "reel"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 37,
+    "fields": {
+      "code": "RO",
+      "code_name": "roll",
+      "code_description": "roll"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 38,
+    "fields": {
+      "code": "SET",
+      "code_name": "set",
+      "code_description": "set"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 39,
+    "fields": {
+      "code": "ST",
+      "code_name": "sheet",
+      "code_description": "sheet"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 40,
+    "fields": {
+      "code": "TNE",
+      "code_name": "tonne (metric ton)",
+      "code_description": "tonne (metric ton)"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 41,
+    "fields": {
+      "code": "TU",
+      "code_name": "tube",
+      "code_description": "tube"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 42,
+    "fields": {
+      "code": "U",
+      "code_name": "Pieces/item [Number]",
+      "code_description": "Pieces/item [Number]"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 43,
+    "fields": {
+      "code": "YRD",
+      "code_name": "yard",
+      "code_description": "yard"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 44,
+    "fields": {
+      "code": "P1",
+      "code_name": "Pack",
+      "code_description": "Pack"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 45,
+    "fields": {
+      "code": "PL",
+      "code_name": "Pallet",
+      "code_description": "Pallet"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 46,
+    "fields": {
+      "code": "Ft",
+      "code_name": "Feet",
+      "code_description": "Feet"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 47,
+    "fields": {
+      "code": "MM",
+      "code_name": "Millimetre",
+      "code_description": "Millimetre"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 48,
+    "fields": {
+      "code": "In",
+      "code_name": "Inches",
+      "code_description": "Inches"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 49,
+    "fields": {
+      "code": "Oz",
+      "code_name": "Ounce",
+      "code_description": "Ounce"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 50,
+    "fields": {
+      "code": "YR",
+      "code_name": "Year",
+      "code_description": "Year"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 51,
+    "fields": {
+      "code": "MTH",
+      "code_name": "Month",
+      "code_description": "Month"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 52,
+    "fields": {
+      "code": "Wk",
+      "code_name": "Week",
+      "code_description": "Week"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 53,
+    "fields": {
+      "code": "D",
+      "code_name": "Day",
+      "code_description": "Day"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 54,
+    "fields": {
+      "code": "hr",
+      "code_name": "Hour",
+      "code_description": "Hour"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 55,
+    "fields": {
+      "code": "ha",
+      "code_name": "Hectare",
+      "code_description": "Hectare"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 56,
+    "fields": {
+      "code": "yd2",
+      "code_name": "Square yards",
+      "code_description": "Square yards"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 57,
+    "fields": {
+      "code": "ft2",
+      "code_name": "Square feet",
+      "code_description": "Square feet"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 58,
+    "fields": {
+      "code": "cm2",
+      "code_name": "Square centimetre",
+      "code_description": "Square centimetre"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 59,
+    "fields": {
+      "code": "m2",
+      "code_name": "Square metre",
+      "code_description": "Square metre"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 60,
+    "fields": {
+      "code": "pt",
+      "code_name": "Pints",
+      "code_description": "Pints"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 61,
+    "fields": {
+      "code": "qt",
+      "code_name": "Quarts",
+      "code_description": "Quarts"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 62,
+    "fields": {
+      "code": "mm",
+      "code_name": "Millilitre",
+      "code_description": "Millilitre"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 63,
+    "fields": {
+      "code": "2X",
+      "code_name": "Meter/Minute",
+      "code_description": "Meter/Minute"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 64,
+    "fields": {
+      "code": "4G",
+      "code_name": "Microliter",
+      "code_description": "Microliter"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 65,
+    "fields": {
+      "code": "4O",
+      "code_name": "Microfarad",
+      "code_description": "Microfarad"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 66,
+    "fields": {
+      "code": "4T",
+      "code_name": "Pikofarad",
+      "code_description": "Pikofarad"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 67,
+    "fields": {
+      "code": "A",
+      "code_name": "Ampere",
+      "code_description": "Ampere"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 68,
+    "fields": {
+      "code": "A87",
+      "code_name": "Gigaohm",
+      "code_description": "Gigaohm"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 69,
+    "fields": {
+      "code": "A93",
+      "code_name": "Gram/Cubic meter",
+      "code_description": "Gram/Cubic meter"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 70,
+    "fields": {
+      "code": "ACR",
+      "code_name": "Acre",
+      "code_description": "Acre"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 71,
+    "fields": {
+      "code": "B34",
+      "code_name": "Kilogram/cubic decimeter",
+      "code_description": "Kilogram/cubic decimeter"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 72,
+    "fields": {
+      "code": "B45",
+      "code_name": "Kilomol",
+      "code_description": "Kilomol"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 73,
+    "fields": {
+      "code": "B47",
+      "code_name": "Kilonewton",
+      "code_description": "Kilonewton"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 74,
+    "fields": {
+      "code": "B73",
+      "code_name": "Meganewton",
+      "code_description": "Meganewton"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 75,
+    "fields": {
+      "code": "B75",
+      "code_name": "Megohm",
+      "code_description": "Megohm"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 76,
+    "fields": {
+      "code": "B78",
+      "code_name": "Megavolt",
+      "code_description": "Megavolt"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 77,
+    "fields": {
+      "code": "B84",
+      "code_name": "Microampere",
+      "code_description": "Microampere"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 78,
+    "fields": {
+      "code": "BAG",
+      "code_name": "Bag",
+      "code_description": "Bag"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 79,
+    "fields": {
+      "code": "BAR",
+      "code_name": "bar",
+      "code_description": "bar"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 80,
+    "fields": {
+      "code": "BOT",
+      "code_name": "Bottle",
+      "code_description": "Bottle"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 81,
+    "fields": {
+      "code": "BQK",
+      "code_name": "Becquerel/kilogram",
+      "code_description": "Becquerel/kilogram"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 82,
+    "fields": {
+      "code": "C10",
+      "code_name": "Millifarad",
+      "code_description": "Millifarad"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 83,
+    "fields": {
+      "code": "C36",
+      "code_name": "Mol per cubic meter",
+      "code_description": "Mol per cubic meter"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 84,
+    "fields": {
+      "code": "C38",
+      "code_name": "Mol per liter",
+      "code_description": "Mol per liter"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 85,
+    "fields": {
+      "code": "C39",
+      "code_name": "Nanoampere",
+      "code_description": "Nanoampere"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 86,
+    "fields": {
+      "code": "C3S",
+      "code_name": "Cubic centimeter/second",
+      "code_description": "Cubic centimeter/second"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 87,
+    "fields": {
+      "code": "C41",
+      "code_name": "Nanofarad",
+      "code_description": "Nanofarad"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 88,
+    "fields": {
+      "code": "C56",
+      "code_name": "Newton/Square millimeter",
+      "code_description": "Newton/Square millimeter"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 89,
+    "fields": {
+      "code": "CCM",
+      "code_name": "Cubic centimeter",
+      "code_description": "Cubic centimeter"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 90,
+    "fields": {
+      "code": "CD",
+      "code_name": "Candela",
+      "code_description": "Candela"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 91,
+    "fields": {
+      "code": "CDM",
+      "code_name": "Cubic decimeter",
+      "code_description": "Cubic decimeter"
+    }
+  },
+  {
+    "model": "main.unitofmeasure",
+    "pk": 92,
+    "fields": {
+      "code": "EA",
+      "code_name": "Each",
+      "code_description": "Indicates individual units or items."
+    }
+  }
+]

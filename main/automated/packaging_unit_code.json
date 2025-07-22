@@ -1,0 +1,812 @@
+[
+  {
+    "model": "main.packagingunitcode",
+    "pk": 1,
+    "fields": {
+      "code": "AM",
+      "code_name": "Ampoule",
+      "code_description": "Ampoule"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 2,
+    "fields": {
+      "code": "BA",
+      "code_name": "Barrel",
+      "code_description": "Barrel"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 3,
+    "fields": {
+      "code": "BC",
+      "code_name": "Bottle crate",
+      "code_description": "Bottle crate"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 4,
+    "fields": {
+      "code": "BE",
+      "code_name": "Bundle",
+      "code_description": "Bundle"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 5,
+    "fields": {
+      "code": "BF",
+      "code_name": "Balloon, nonprotected",
+      "code_description": "Balloon, non-protected"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 6,
+    "fields": {
+      "code": "BG",
+      "code_name": "Bag",
+      "code_description": "Bag"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 7,
+    "fields": {
+      "code": "BJ",
+      "code_name": "Bucket",
+      "code_description": "Bucket"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 8,
+    "fields": {
+      "code": "BK",
+      "code_name": "Basket",
+      "code_description": "Basket"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 9,
+    "fields": {
+      "code": "BL",
+      "code_name": "Bale",
+      "code_description": "Bale"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 10,
+    "fields": {
+      "code": "BQ",
+      "code_name": "Bottle, protected cylindrical",
+      "code_description": "Bottle, protected cylindrical"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 11,
+    "fields": {
+      "code": "BR",
+      "code_name": "Bar",
+      "code_description": "Bar"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 12,
+    "fields": {
+      "code": "BV",
+      "code_name": "Bottle, bulbous",
+      "code_description": "Bottle, bulbous"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 13,
+    "fields": {
+      "code": "BZ",
+      "code_name": "Bag",
+      "code_description": "Bag"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 14,
+    "fields": {
+      "code": "CA",
+      "code_name": "Can",
+      "code_description": "Can"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 15,
+    "fields": {
+      "code": "CH",
+      "code_name": "Chest",
+      "code_description": "Chest"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 16,
+    "fields": {
+      "code": "CJ",
+      "code_name": "Coffin",
+      "code_description": "Coffin"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 17,
+    "fields": {
+      "code": "CL",
+      "code_name": "Coil",
+      "code_description": "Coil"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 18,
+    "fields": {
+      "code": "CR",
+      "code_name": "Wooden Box, Wooden Case",
+      "code_description": "Wooden Box, Wooden Case"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 19,
+    "fields": {
+      "code": "CS",
+      "code_name": "Cassette",
+      "code_description": "Cassette"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 20,
+    "fields": {
+      "code": "CT",
+      "code_name": "Carton",
+      "code_description": "Carton"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 21,
+    "fields": {
+      "code": "CTN",
+      "code_name": "Container",
+      "code_description": "Container"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 22,
+    "fields": {
+      "code": "CY",
+      "code_name": "Cylinder",
+      "code_description": "Cylinder"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 23,
+    "fields": {
+      "code": "DR",
+      "code_name": "Drum",
+      "code_description": "Drum"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 24,
+    "fields": {
+      "code": "GT",
+      "code_name": "Extra Countable Item",
+      "code_description": "Extra Countable Item"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 25,
+    "fields": {
+      "code": "HH",
+      "code_name": "Hand Baggage",
+      "code_description": "Hand Baggage"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 26,
+    "fields": {
+      "code": "IZ",
+      "code_name": "Ingots",
+      "code_description": "Ingots"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 27,
+    "fields": {
+      "code": "JR",
+      "code_name": "Jar",
+      "code_description": "Jar"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 28,
+    "fields": {
+      "code": "JU",
+      "code_name": "Jug",
+      "code_description": "Jug"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 29,
+    "fields": {
+      "code": "JY",
+      "code_name": "Jerry CAN Cylindrical",
+      "code_description": "Jerry CAN Cylindrical"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 30,
+    "fields": {
+      "code": "KZ",
+      "code_name": "Canester",
+      "code_description": "Canester"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 31,
+    "fields": {
+      "code": "LZ",
+      "code_name": "Logs, in bundle/bunch/truss",
+      "code_description": "Logs, in bundle/bunch/truss"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 32,
+    "fields": {
+      "code": "NT",
+      "code_name": "Net",
+      "code_description": "Net"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 33,
+    "fields": {
+      "code": "OU",
+      "code_name": "Non-Exterior Packaging Unit",
+      "code_description": "Non-Exterior Packaging Unit"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 34,
+    "fields": {
+      "code": "PD",
+      "code_name": "Poddon",
+      "code_description": "Poddon"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 35,
+    "fields": {
+      "code": "PG",
+      "code_name": "Plate",
+      "code_description": "Plate"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 36,
+    "fields": {
+      "code": "PI",
+      "code_name": "Pipe",
+      "code_description": "Pipe"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 37,
+    "fields": {
+      "code": "PO",
+      "code_name": "Pilot",
+      "code_description": "Pilot"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 38,
+    "fields": {
+      "code": "PU",
+      "code_name": "Traypack",
+      "code_description": "Traypack"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 39,
+    "fields": {
+      "code": "RL",
+      "code_name": "Reel",
+      "code_description": "Reel"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 40,
+    "fields": {
+      "code": "RO",
+      "code_name": "Roll",
+      "code_description": "Roll"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 41,
+    "fields": {
+      "code": "RZ",
+      "code_name": "Rods, in bundle/bunch/truss",
+      "code_description": "Rods, in bundle/bunch/truss"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 42,
+    "fields": {
+      "code": "SK",
+      "code_name": "Skeletoncase",
+      "code_description": "Skeletoncase"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 43,
+    "fields": {
+      "code": "TY",
+      "code_name": "Tank, cylindrical",
+      "code_description": "Tank, cylindrical"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 44,
+    "fields": {
+      "code": "VG",
+      "code_name": "Bulk,gas(at 1031 mbar 15 oC)",
+      "code_description": "Bulk,gas(at 1031 mbar 15 oC)"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 45,
+    "fields": {
+      "code": "VL",
+      "code_name": "Bulk,liquid(at normal temperature/pressure)",
+      "code_description": "Bulk,liquid(at normal temperature/pressure)"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 46,
+    "fields": {
+      "code": "VO",
+      "code_name": "Bulk, solid, large particles(nodules)",
+      "code_description": "Bulk, solid, large particles(\"nodules\")"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 47,
+    "fields": {
+      "code": "VQ",
+      "code_name": "Bulk, gas(liquefied at abnormal temperature/pressure)",
+      "code_description": "Bulk, gas(liquefied at abnormal temperature/pressure)"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 48,
+    "fields": {
+      "code": "VR",
+      "code_name": "Bulk, solid, granular particles(grains)",
+      "code_description": "Bulk, solid, granular particles(\"grains\")"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 49,
+    "fields": {
+      "code": "VT",
+      "code_name": "Extra Bulk Item",
+      "code_description": "Extra Bulk Item"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 50,
+    "fields": {
+      "code": "VY",
+      "code_name": "Bulk, fine particles(powder)",
+      "code_description": "Bulk, fine particles(\"powder\")"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 51,
+    "fields": {
+      "code": "ML",
+      "code_name": "Mills cigarette",
+      "code_description": "Mills cigarette"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 52,
+    "fields": {
+      "code": "TN",
+      "code_name": "TAN",
+      "code_description": "1TAN REFER TO 20BAGS"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 53,
+    "fields": {
+      "code": "B/L",
+      "code_name": "Black Lug",
+      "code_description": "Refers to a lug or container that is black in color."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 54,
+    "fields": {
+      "code": "BIN",
+      "code_name": "Bin",
+      "code_description": "A container for storing or transporting goods"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 55,
+    "fields": {
+      "code": "BOTT",
+      "code_name": "Bottle",
+      "code_description": "A container typically used for liquids"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 56,
+    "fields": {
+      "code": "BOUQ",
+      "code_name": "Bouquet",
+      "code_description": "A collection of flowers or other items bundled together"
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 57,
+    "fields": {
+      "code": "BOWL",
+      "code_name": "Bowl",
+      "code_description": "A round or oval container used for holding food or other items."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 58,
+    "fields": {
+      "code": "BOX",
+      "code_name": "Box",
+      "code_description": "A rectangular container typically used for packaging and storage."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 59,
+    "fields": {
+      "code": "BUBG",
+      "code_name": "Budget Bag",
+      "code_description": "A bag designed for economical or budget-conscious purposes."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 60,
+    "fields": {
+      "code": "BULK",
+      "code_name": "Bulk Pack",
+      "code_description": "Packaging designed for large quantities of items."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 61,
+    "fields": {
+      "code": "BUNC",
+      "code_name": "Bunch",
+      "code_description": "A grouping or collection of items, often tied together."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 62,
+    "fields": {
+      "code": "BUND",
+      "code_name": "Bundle",
+      "code_description": "A group of items bound or packaged together."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 63,
+    "fields": {
+      "code": "CLEA",
+      "code_name": "Clear Lid",
+      "code_description": "A lid or covering that is transparent or see-through."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 64,
+    "fields": {
+      "code": "EA",
+      "code_name": "Each",
+      "code_description": "Indicates individual units or items."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 65,
+    "fields": {
+      "code": "EACH",
+      "code_name": "Each",
+      "code_description": "Similar to \"EA,\" denotes individual units or items."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 66,
+    "fields": {
+      "code": "ECON",
+      "code_name": "Economy Bag",
+      "code_description": "A bag designed for cost-effective or budget-friendly use."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 67,
+    "fields": {
+      "code": "ECPO",
+      "code_name": "Econo Poc Sell",
+      "code_description": "Refers to an economical or budget-friendly pocket for selling items."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 68,
+    "fields": {
+      "code": "G/L",
+      "code_name": "Green Lugs",
+      "code_description": "Lugs or containers that are green in color."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 69,
+    "fields": {
+      "code": "KARR",
+      "code_name": "Karripoc",
+      "code_description": "Specific packaging or container type."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 70,
+    "fields": {
+      "code": "LABE",
+      "code_name": "Labels",
+      "code_description": "Refers to adhesive labels used for marking or identifying items."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 71,
+    "fields": {
+      "code": "MESH",
+      "code_name": "Mesh",
+      "code_description": "Packaging material made of interconnected strands or fibers."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 72,
+    "fields": {
+      "code": "NETL",
+      "code_name": "Netlon",
+      "code_description": "Refers to a type of net or netting used in packaging."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 73,
+    "fields": {
+      "code": "P/KG",
+      "code_name": "Per Kilogram",
+      "code_description": "Indicates pricing or packaging based on weight in kilograms."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 74,
+    "fields": {
+      "code": "PACK",
+      "code_name": "PACK",
+      "code_description": "General term for packaging or packaging units."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 75,
+    "fields": {
+      "code": "PCRT",
+      "code_name": "PCRT",
+      "code_description": "Specific type of packaging or container."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 76,
+    "fields": {
+      "code": "PILP",
+      "code_name": "Pilpac",
+      "code_description": "Specific type of packaging or container."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 77,
+    "fields": {
+      "code": "POC",
+      "code_name": "Pocket",
+      "code_description": "A small container or compartment."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 78,
+    "fields": {
+      "code": "POCS",
+      "code_name": "Poc Sell",
+      "code_description": "Refers to a pocket or small container used for selling items."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 79,
+    "fields": {
+      "code": "POLY",
+      "code_name": "Poly Bags",
+      "code_description": "Bags made of polyethylene or similar materials."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 80,
+    "fields": {
+      "code": "POT",
+      "code_name": "Pots",
+      "code_description": "Containers typically used for planting or holding plants."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 81,
+    "fields": {
+      "code": "PREP",
+      "code_name": "Prepack",
+      "code_description": "Items or units that are prepackaged or prepared."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 82,
+    "fields": {
+      "code": "PUND",
+      "code_name": "Pun DTray",
+      "code_description": "Refers to a tray or container for specific items."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 83,
+    "fields": {
+      "code": "PUNN",
+      "code_name": "Punnet - Packaging",
+      "code_description": "A specific type of packaging often used for fruits or vegetables."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 84,
+    "fields": {
+      "code": "SLEE",
+      "code_name": "Sleeve",
+      "code_description": "A covering or protective layer."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 85,
+    "fields": {
+      "code": "SOCK",
+      "code_name": "Sock",
+      "code_description": "A fabric covering often used for protection or packaging."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 86,
+    "fields": {
+      "code": "TRAY",
+      "code_name": "Tray",
+      "code_description": "A flat, shallow container used for holding or displaying items."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 87,
+    "fields": {
+      "code": "TRSE",
+      "code_name": "Tray Sell",
+      "code_description": "Refers to a tray or container specifically designed for selling items."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 88,
+    "fields": {
+      "code": "TUB",
+      "code_name": "TUB",
+      "code_description": "A container typically with a round shape and open top."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 89,
+    "fields": {
+      "code": "UNWR",
+      "code_name": "Unwrap",
+      "code_description": "Indicates items that are not wrapped or packaged."
+    }
+  },
+  {
+    "model": "main.packagingunitcode",
+    "pk": 90,
+    "fields": {
+      "code": "WRAP",
+      "code_name": "Wraped",
+      "code_description": "Indicates items that are wrapped or packaged."
+    }
+  }
+]
