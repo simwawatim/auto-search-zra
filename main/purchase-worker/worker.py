@@ -30,13 +30,19 @@ class Connection:
                 item_list = data.get("data", {}).get("itemList", [])
                 print(f"🔢 Number of items fetched: {len(item_list)}")
 
+                # Create one purchase order per batch
+                purchase_order_id = self.create_purchase_order()
+                if not purchase_order_id:
+                    print("❌ Failed to create Purchase Order. Aborting.")
+                    return []
+
                 for item in item_list:
                     item_data = self.format_item(item)
 
                     if item_data:
-                        item_id = self.create_item(*item_data)
-                        if item_id:
-                            self.link_to_purchase(item_id, item)
+                        item_code = self.create_item(*item_data)
+                        if item_code:
+                            self.link_to_purchase_order(purchase_order_id, item_code, item)
                     else:
                         print("⚠️ Skipping item due to missing required fields.")
                 return item_list
@@ -64,6 +70,14 @@ class Connection:
     def create_item(self, item_name, item_code, item_group, origin_code, pkg_unit):
         try:
             cursor = self.conn.cursor()
+
+            # Check if item already exists
+            cursor.execute("SELECT name FROM tabItem WHERE item_code = %s", (item_code,))
+            result = cursor.fetchone()
+            if result:
+                print(f"✅ Item already exists: {item_name} → {result[0]}")
+                return item_code  # Use item_code for linking
+
             name = str(uuid.uuid4())
             sql = """
             INSERT INTO `tabItem` 
@@ -74,30 +88,50 @@ class Connection:
             cursor.execute(sql, values)
             self.conn.commit()
             print(f"✅ Item created: {item_name} → {name}")
-            return name
+            return item_code
         except Error as e:
             print(f"❌ Error inserting item: {e}")
             return None
 
-    def link_to_purchase(self, item_id, item):
+    def create_purchase_order(self):
         try:
             cursor = self.conn.cursor()
-            purchase_id = str(uuid.uuid4())  # Create or fetch existing purchase ID
+            name = f"PO-{str(uuid.uuid4())[:8]}"
+            sql = """
+            INSERT INTO `tabPurchase Order` 
+            (name, supplier, transaction_date, company, currency, docstatus, creation, modified)
+            VALUES (%s, %s, %s, %s, %s, 0, NOW(), NOW())
+            """
+            values = (name, "Dummy Supplier", datetime.today().date(), "Dummy Company", "USD")
+            cursor.execute(sql, values)
+            self.conn.commit()
+            print(f"📄 Purchase Order created: {name}")
+            return name
+        except Error as e:
+            print(f"❌ Error creating Purchase Order: {e}")
+            return None
+
+    def link_to_purchase_order(self, purchase_order_id, item_code, item):
+        try:
+            cursor = self.conn.cursor()
 
             sql = """
-            INSERT INTO `tabPurchaseItem` 
-            (name, parent, item_code, qty, uom, rate, amount, creation, modified)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, NOW(), NOW())
+            INSERT INTO `tabPurchase Order Item` 
+            (name, parent, parenttype, parentfield, item_code, qty, uom, rate, amount, creation, modified)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, NOW(), NOW())
             """
             qty = item.get("qty", 0)
             uom = item.get("qtyUnitCd", "Unit")
-            rate = round(item.get("invcFcurAmt", 0) / qty, 2) if qty else 0
-            amount = item.get("invcFcurAmt", 0)
+            invcFcurAmt = item.get("invcFcurAmt", 0)
+            rate = round(invcFcurAmt / qty, 2) if qty else 0
+            amount = invcFcurAmt
 
             values = (
-                str(uuid.uuid4()),
-                purchase_id,  # You may want to relate to a real `tabPurchase` record
-                item_id,
+                str(uuid.uuid4()),    # name of Purchase Order Item record
+                purchase_order_id,    # parent (Purchase Order name)
+                "Purchase Order",     # parenttype
+                "items",              # parentfield - child table fieldname in Purchase Order
+                item_code,
                 qty,
                 uom,
                 rate,
@@ -106,9 +140,9 @@ class Connection:
 
             cursor.execute(sql, values)
             self.conn.commit()
-            print(f"🔗 Linked item to purchase: {item_id} → {purchase_id}")
+            print(f"🔗 Linked item to Purchase Order: {item_code} → {purchase_order_id}")
         except Error as e:
-            print(f"❌ Error linking item to purchase: {e}")
+            print(f"❌ Error linking item to Purchase Order: {e}")
 
 if __name__ == "__main__":
     db = Connection("localhost", "root", "root", "_19ba3414f40a9844")
