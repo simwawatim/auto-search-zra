@@ -8,5 +8,6 @@ urlpatterns = [
     path('api/get-item-class-by-name/<str:item_class_name>/', views.ItemsClassView.as_view()),
     path("api/imports", views.Imports.as_view(), name="get_imports"),
     path('api/update_rcpt/', views.update_rcpt_no, name='update_rcpt_no'),
+    path('api/get-rcpt-no/', views.get_rcpt_no),
 
 ]

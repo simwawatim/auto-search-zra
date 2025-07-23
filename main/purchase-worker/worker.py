@@ -2,6 +2,7 @@ import mysql.connector
 from mysql.connector import Error
 import requests
 import uuid
+from datetime import datetime
 
 class Connection:
     def __init__(self, host, user, password, database):
@@ -30,16 +31,15 @@ class Connection:
                 print(f"🔢 Number of items fetched: {len(item_list)}")
 
                 for item in item_list:
-                    item_name, item_code, orgnNatCd, pkg, pkgUnitCd = self.format_item(item)
-                    print(f"➡️ Formatted Item -> Name: {item_name}, Code: {item_code}, Origin: {orgnNatCd}, Package: {pkg}, Unit: {pkgUnitCd}")
+                    item_data = self.format_item(item)
 
-                    if item_name and item_code and orgnNatCd:
-                        item_group = orgnNatCd  # Or your own logic to determine group
-                        self.create_item(item_name, item_code, item_group, orgnNatCd, pkgUnitCd)
+                    if item_data:
+                        item_id = self.create_item(*item_data)
+                        if item_id:
+                            self.link_to_purchase(item_id, item)
                     else:
                         print("⚠️ Skipping item due to missing required fields.")
                 return item_list
-
             else:
                 print(f"❌ Failed to fetch imports: {response.status_code}")
                 return []
@@ -49,32 +49,66 @@ class Connection:
 
     def format_item(self, item):
         try:
-            item_name = item.get("itemNm", "")
-            item_code = item.get("hsCd", "")
-            item_origin_cd = item.get("orgnNatCd", "")
-            item_pkg = item.get("pkg", "")
-            item_pkg_unit_cd = item.get("pkgUnitCd", "")
-            return item_name, item_code, item_origin_cd, item_pkg, item_pkg_unit_cd
+            item_name = item.get("itemNm", "").strip()
+            item_code = item.get("hsCd", "").strip()
+            item_group = item.get("orgnNatCd", "").strip()
+            origin_code = item.get("orgnNatCd", "").strip()
+            pkg_unit = item.get("pkgUnitCd", "")
+            if not item_name or not item_code or not origin_code:
+                return None
+            return item_name, item_code, item_group, origin_code, pkg_unit
         except Exception as e:
             print(f"❌ Error formatting item: {e}")
-            return None, None, None, None, None
+            return None
 
-    def create_item(self, item_name, item_code, item_group, item_origin_cd, item_pkg_unit_cd):
+    def create_item(self, item_name, item_code, item_group, origin_code, pkg_unit):
         try:
             cursor = self.conn.cursor()
+            name = str(uuid.uuid4())
             sql = """
             INSERT INTO `tabItem` 
             (name, item_name, item_code, item_group, custom_origin_place_code, custom_packaging_unit_code, creation, modified)
             VALUES (%s, %s, %s, %s, %s, %s, NOW(), NOW())
             """
-            name = str(uuid.uuid4())
-            values = (name, item_name, item_code, item_group, item_origin_cd, item_pkg_unit_cd)
+            values = (name, item_name, item_code, item_group, origin_code, pkg_unit)
+            cursor.execute(sql, values)
+            self.conn.commit()
+            print(f"✅ Item created: {item_name} → {name}")
+            return name
+        except Error as e:
+            print(f"❌ Error inserting item: {e}")
+            return None
+
+    def link_to_purchase(self, item_id, item):
+        try:
+            cursor = self.conn.cursor()
+            purchase_id = str(uuid.uuid4())  # Create or fetch existing purchase ID
+
+            sql = """
+            INSERT INTO `tabPurchaseItem` 
+            (name, parent, item_code, qty, uom, rate, amount, creation, modified)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, NOW(), NOW())
+            """
+            qty = item.get("qty", 0)
+            uom = item.get("qtyUnitCd", "Unit")
+            rate = round(item.get("invcFcurAmt", 0) / qty, 2) if qty else 0
+            amount = item.get("invcFcurAmt", 0)
+
+            values = (
+                str(uuid.uuid4()),
+                purchase_id,  # You may want to relate to a real `tabPurchase` record
+                item_id,
+                qty,
+                uom,
+                rate,
+                amount
+            )
 
             cursor.execute(sql, values)
             self.conn.commit()
-            print(f"✅ Item created in DB: {name}")
+            print(f"🔗 Linked item to purchase: {item_id} → {purchase_id}")
         except Error as e:
-            print(f"❌ Error inserting item: {e}")
+            print(f"❌ Error linking item to purchase: {e}")
 
 if __name__ == "__main__":
     db = Connection("localhost", "root", "root", "_19ba3414f40a9844")

@@ -214,7 +214,6 @@ class GetAllItemClasses(APIView):
                     status=status.HTTP_200_OK
                 )
 
-            # 1. Prepare data for processing and validation
             processed_data = []
             validation_errors = []
             for item in item_cls_list:
@@ -222,7 +221,7 @@ class GetAllItemClasses(APIView):
                     "itemClsCd": item.get("itemClsCd"),
                     "itemClsNm": item.get("itemClsNm"),
                     "itemClsLvl": item.get("itemClsLvl"),
-                    "useYn": item.get("useYn"), # Ensure this matches your serializer/model
+                    "useYn": item.get("useYn"), 
                 }
                 # Validate each item using the serializer
                 serializer = itemClassListSerializer(data=formatted_item)
@@ -373,3 +372,38 @@ def update_rcpt_no(request):
             return JsonResponse({'error': str(e)}, status=500)
     else:
         return JsonResponse({'error': 'POST request required'}, status=405)
+
+
+@csrf_exempt
+def get_rcpt_no(request):
+    if request.method == 'GET':
+        docname = request.GET.get('docname')
+        
+        if not docname:
+            return JsonResponse({'error': 'Missing docname parameter'}, status=400)
+
+        try:
+            conn = mysql.connector.connect(
+                host='localhost',
+                user='root',
+                password='root',
+                database='_19ba3414f40a9844'
+            )
+            cursor = conn.cursor(dictionary=True)
+            sql = "SELECT rcpNo FROM `tabSales Order` WHERE name = %s"
+            cursor.execute(sql, (docname,))
+            result = cursor.fetchone()
+            cursor.close()
+            conn.close()
+
+            if result:
+                print(f"Retrieved rcptNo: {result['rcpNo']} for docname: {docname}")
+                return JsonResponse({'docname': docname, 'rcpNo': result['rcpNo']})
+                
+            else:
+                return JsonResponse({'error': 'Sales Order not found'}, status=404)
+
+        except Error as e:
+            return JsonResponse({'error': str(e)}, status=500)
+    else:
+        return JsonResponse({'error': 'GET request required'}, status=405)
