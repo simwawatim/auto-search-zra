@@ -1,0 +1,90 @@
+Ampoule
+Barrel
+Bottle crate
+Bundle
+Balloon, nonprotected
+Bag
+Bucket
+Basket
+Bale
+Bottle, protected cylindrical
+Bar
+Bottle, bulbous
+Bag
+Can
+Chest
+Coffin
+Coil
+Wooden Box, Wooden Case
+Cassette
+Carton
+Container
+Cylinder
+Drum
+Extra Countable Item
+Hand Baggage
+Ingots
+Jar
+Jug
+Jerry CAN Cylindrical
+Canester
+Logs, in bundle/bunch/truss
+Net
+Non-Exterior Packaging Unit
+Poddon
+Plate
+Pipe
+Pilot
+Traypack
+Reel
+Roll
+Rods, in bundle/bunch/truss
+Skeletoncase
+Tank, cylindrical
+Bulk,gas(at 1031 mbar 15 oC)
+Bulk,liquid(at normal temperature/pressure)
+Bulk, solid, large particles(nodules)
+Bulk, gas(liquefied at abnormal temperature/pressure)
+Bulk, solid, granular particles(grains)
+Extra Bulk Item
+Bulk, fine particles(powder)
+Mills cigarette
+TAN
+Black Lug
+Bin
+Bottle
+Bouquet
+Bowl
+Box
+Budget Bag
+Bulk Pack
+Bunch
+Bundle
+Clear Lid
+Each
+Each
+Economy Bag
+Econo Poc Sell
+Green Lugs
+Karripoc
+Labels
+Mesh
+Netlon
+Per Kilogram
+PACK
+PCRT
+Pilpac
+Pocket
+Poc Sell
+Poly Bags
+Pots
+Prepack
+Pun DTray
+Punnet - Packaging
+Sleeve
+Sock
+Tray
+Tray Sell
+TUB
+Unwrap
+Wraped

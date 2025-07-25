@@ -1,0 +1,92 @@
+Pair
+Cap
+Barrel
+bundle
+bag
+block
+BLL Barrel
+box
+Can
+Cell
+centimetre
+CARAT
+Drum
+Dozen
+Gallon
+Gram
+Gross
+Kilo-Gramme
+kilometre
+kilowatt
+Litre
+pound
+link
+Litre
+Metre
+Square Metre
+Cubic Metre
+milligram
+metre
+megawatt hour
+Number
+part per thousand
+packet
+plate
+pair
+reel
+roll
+set
+sheet
+tonne (metric ton)
+tube
+Pieces/item [Number]
+yard
+Pack
+Pallet
+Feet
+Millimetre
+Inches
+Ounce
+Year
+Month
+Week
+Day
+Hour
+Hectare
+Square yards
+Square feet
+Square centimetre
+Square metre
+Pints
+Quarts
+Millilitre
+Meter/Minute
+Microliter
+Microfarad
+Pikofarad
+Ampere
+Gigaohm
+Gram/Cubic meter
+Acre
+Kilogram/cubic decimeter
+Kilomol
+Kilonewton
+Meganewton
+Megohm
+Megavolt
+Microampere
+Bag
+bar
+Bottle
+Becquerel/kilogram
+Millifarad
+Mol per cubic meter
+Mol per liter
+Nanoampere
+Cubic centimeter/second
+Nanofarad
+Newton/Square millimeter
+Cubic centimeter
+Candela
+Cubic decimeter
+Each
