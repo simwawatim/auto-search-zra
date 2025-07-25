@@ -355,10 +355,10 @@ def update_rcpt_no(request):
                 host='localhost',
                 user='root',
                 password='root',
-                database='_19ba3414f40a9844'
+                database='_7fb1f4533ec3ac7c'
             )
             cursor = conn.cursor()
-            sql = "UPDATE `tabSales Order` SET rcpNo = %s WHERE name = %s"
+            sql = "UPDATE `tabSales Invoice` SET custom_rcpt_no = %s WHERE name = %s"
             cursor.execute(sql, (rcpt_no, docname))
             conn.commit()
             cursor.close()
