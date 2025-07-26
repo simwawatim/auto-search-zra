@@ -378,7 +378,7 @@ def update_rcpt_no(request):
 def get_rcpt_no(request):
     if request.method == 'GET':
         docname = request.GET.get('docname')
-        
+
         if not docname:
             return JsonResponse({'error': 'Missing docname parameter'}, status=400)
 
@@ -387,23 +387,30 @@ def get_rcpt_no(request):
                 host='localhost',
                 user='root',
                 password='root',
-                database='_19ba3414f40a9844'
+                database='_7fb1f4533ec3ac7c'
             )
             cursor = conn.cursor(dictionary=True)
-            sql = "SELECT rcpNo FROM `tabSales Order` WHERE name = %s"
+            sql = "SELECT custom_rcpt_no FROM `tabSales Invoice` WHERE name = %s"
             cursor.execute(sql, (docname,))
             result = cursor.fetchone()
+
+
             cursor.close()
             conn.close()
 
             if result:
-                print(f"Retrieved rcptNo: {result['rcpNo']} for docname: {docname}")
-                return JsonResponse({'docname': docname, 'rcpNo': result['rcpNo']})
-                
+                rcpt_no = result.get('custom_rcpt_no')
+                if rcpt_no is not None:
+                    print(f"Retrieved rcptNo: {rcpt_no} for docname: {docname}")
+                    return JsonResponse({'docname': docname, 'custom_rcpt_no': rcpt_no})
+                else:
+                    print(f"Key 'custom_rcpt_no' missing in DB result: {result}")
+                    return JsonResponse({'error': 'custom_rcpt_no not found for the given docname'}, status=404)
             else:
-                return JsonResponse({'error': 'Sales Order not found'}, status=404)
+                return JsonResponse({'error': 'Sales Invoice not found'}, status=404)
 
         except Error as e:
             return JsonResponse({'error': str(e)}, status=500)
+
     else:
         return JsonResponse({'error': 'GET request required'}, status=405)
