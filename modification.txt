@@ -2,3 +2,6 @@ ALTER TABLE `tabPurchase Order Item`
 ADD COLUMN `custom_import` TINYINT(1) NOT NULL DEFAULT 0;
 
 __________________ added custom_import feilds _____________
+
+
+INSERT INTO `tabUOM` (name, must_be_whole_number, enabled) VALUES ('KGM', 0, 1);

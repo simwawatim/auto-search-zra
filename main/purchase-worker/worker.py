@@ -201,7 +201,6 @@ class CreatePurchase(GetItems, Connection):
             posting_date = datetime.today().strftime("%Y-%m-%d")
             supplier_name = self.current_item.get("spplr_nm", "Dummy Supplier")
 
-            # Ensure supplier exists
             cursor.execute("SELECT name FROM tabSupplier WHERE name = %s", (supplier_name,))
             if not cursor.fetchone():
                 cursor.execute("""
@@ -210,21 +209,20 @@ class CreatePurchase(GetItems, Connection):
                 """, (supplier_name, supplier_name))
                 print(f"Created new supplier: {supplier_name}")
 
-            # Get company
             cursor.execute("SELECT name FROM tabCompany LIMIT 1")
             company_row = cursor.fetchone()
             if not company_row:
-                print(" No company found in tabCompany.")
+                print("No company found in tabCompany.")
                 return None
             company_name = company_row[0]
 
-            currency = self.current_item.get("invc_fcur_cd", "USD")
-            conversion_rate = float(self.current_item.get("invc_fcur_excrt") or 1.0)
+            # Force currency to ZMW
+            currency = "ZMW"
+            conversion_rate = 1.0
             amount = float(self.current_item.get("invc_fcur_amt") or 0.0)
-            qty = float(self.current_item.get("qty") or 0)
+            qty = float(self.current_item.get("qty") or 0.0)
             rate = amount / qty if qty else 0
 
-            # Insert Purchase Invoice
             cursor.execute("""
                 INSERT INTO `tabPurchase Invoice`
                 (name, supplier, posting_date, bill_date, company, currency, conversion_rate, docstatus, naming_series, creation, modified)
@@ -234,7 +232,6 @@ class CreatePurchase(GetItems, Connection):
                 currency, conversion_rate, "ACC-PINV"
             ))
 
-            # Insert item row
             cursor.execute("""
                 INSERT INTO `tabPurchase Invoice Item`
                 (name, parent, parenttype, parentfield, item_code, item_name, qty, uom, stock_uom, rate, amount, creation, modified, idx)
@@ -247,17 +244,16 @@ class CreatePurchase(GetItems, Connection):
             ))
 
             self.conn.commit()
-            print(f"Purchase Invoice created successfully: {name}")
+            print(f"✅ Purchase Invoice created successfully: {name}")
             return name
 
         except Error as e:
-            print(f"Error creating Purchase Invoice: {e}")
+            print(f"⛔ Error creating Purchase Invoice: {e}")
             self.conn.rollback()
             return None
         finally:
             if cursor:
                 cursor.close()
-
 
 # ========== RUN THE SCRIPT ==========
 
@@ -283,12 +279,12 @@ if __name__ == "__main__":
             invoice_name = purchase_creator.create_purchase_invoice(created_item_name)
 
             if not invoice_name:
-                print("Failed to create purchase invoice")
+                print("❌ Failed to create purchase invoice")
 
             purchase_creator.close()
         else:
-            print("Failed to create item")
+            print("❌ Failed to create item")
     else:
-        print("Failed to fetch import data")
+        print("❌ Failed to fetch import data")
 
     item_creator.close()
