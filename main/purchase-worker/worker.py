@@ -1,10 +1,11 @@
+import uuid
 from mysql.connector import Error
 from datetime import datetime
 import mysql.connector
 import requests
 import random
-import uuid
 import json
+import re
 
 class Connection:
     def __init__(self, host, user, password, database):
@@ -26,7 +27,6 @@ class Connection:
             self.conn.close()
             print("MySQL connection closed")
 
-
 class GetItems:
     def __init__(self):
         self.result_msg = ""
@@ -39,16 +39,14 @@ class GetItems:
         try:
             response = requests.get(url, timeout=10)
             response.raise_for_status()
-            
             response_data = response.json()
-            
+
             if response_data.get("resultCd") == "000":
                 self.result_msg = response_data.get("resultMsg", "")
                 self.result_dt = response_data.get("resultDt", "")
-                
                 data = response_data.get("data", {})
                 self.item_list = data.get("itemList", [])
-                
+
                 if self.item_list:
                     item = self.item_list[0]
                     self.current_item = {
@@ -62,9 +60,9 @@ class GetItems:
                         "orgn_nat_cd": item.get("orgnNatCd", ""),
                         "expt_nat_cd": item.get("exptNatCd", ""),
                         "pkg": item.get("pkg", ""),
-                        "pkg_unit_cd": item.get("pkgUnitCd") or "PCS",       # Default
-                        "qty": item.get("qty") or "0",                       # Default
-                        "qty_unit_cd": item.get("qtyUnitCd") or "KGM",      # Default
+                        "pkg_unit_cd": item.get("pkgUnitCd") or "PCS",
+                        "qty": item.get("qty") or "0",
+                        "qty_unit_cd": item.get("qtyUnitCd") or "KGM",
                         "tot_wt": item.get("totWt", ""),
                         "net_wt": item.get("netWt", ""),
                         "spplr_nm": item.get("spplrNm", "").replace('\n', ' '),
@@ -76,18 +74,19 @@ class GetItems:
                     print("\n--- Current Item Data ---")
                     for key, value in self.current_item.items():
                         print(f"{key}: {value}")
-                
+
                 return {
                     "status": "success",
                     "result_msg": self.result_msg,
                     "result_dt": self.result_dt,
                     "items": self.item_list
                 }
+
             else:
                 print("Error fetching imports")
                 print(f"Response: {response.text}")
                 return None
-                
+
         except requests.exceptions.RequestException as e:
             print(f"Request failed: {e}")
             return None
@@ -96,7 +95,6 @@ class GetItems:
             if 'response' in locals():
                 print(f"Raw response: {response.text}")
             return None
-
 
 class CreateItem(GetItems, Connection):
     def __init__(self, host, user, password, database):
@@ -108,7 +106,6 @@ class CreateItem(GetItems, Connection):
         ]
 
     def validate_data(self):
-        """Validate that all required fields have values"""
         missing_fields = [field for field in self.required_fields 
                          if not self.current_item.get(field)]
         
@@ -121,7 +118,7 @@ class CreateItem(GetItems, Connection):
         except ValueError:
             print(f"Invalid quantity value: {self.current_item['qty']}")
             return False
-            
+
         return True
 
     def create(self):
@@ -135,29 +132,32 @@ class CreateItem(GetItems, Connection):
         random_num = ''.join([str(random.randint(0, 9)) for _ in range(6)])
         name = f"IMPORT{self.current_item['orgn_nat_cd']}{self.current_item['qty_unit_cd']}{random_num}"
         item_group = "Imports"
-        
+        country_zm = "Zambia"
+
         try:
             cursor = self.conn.cursor()
-            
+
             query = """
                 INSERT INTO tabItem 
                 (name, item_name, opening_stock, stock_uom, country_of_origin,
-                 custom_task_cd, custom_dcl__de, 
-                 custom_origin_place_code, custom_packaging_unit_code, item_group, disabled)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                 custom_task_cd, custom_dcl__de,
+                 custom_origin_place_code, custom_packaging_unit_code, item_group, disabled, custom_imptitemsttscd, custom_hscd)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
             values = (
                 name,
                 self.current_item["item_nm"],
                 float(self.current_item["qty"]),
                 self.current_item["qty_unit_cd"],
-                self.current_item["orgn_nat_cd"],
+                country_zm,
                 self.current_item["task_cd"],
                 self.current_item["dcl_de"],
                 self.current_item["orgn_nat_cd"],
                 self.current_item["pkg_unit_cd"],
                 item_group,
-                1
+                1,
+                self.current_item["impt_itemstts_cd"],
+                self.current_item["hs_cd"],
             )
 
             print("\n--- Executing Query ---")
@@ -166,24 +166,8 @@ class CreateItem(GetItems, Connection):
 
             cursor.execute(query, values)
             self.conn.commit()
-            
+
             print(f"\n✅ Item created successfully with name: {name}")
-            
-            cursor.execute("SELECT * FROM tabItem WHERE name = %s", (name,))
-            inserted_item = cursor.fetchone()
-            
-            if inserted_item:
-                print("\n--- Inserted Item Details ---")
-                print(f"Name: {inserted_item[0]}")
-                print(f"Item Name: {inserted_item[9]}")
-                print(f"Opening Stock: {inserted_item[15]}")
-                print(f"Custom Task CD: {inserted_item[77]}")
-                print(f"Custom DCL DE: {inserted_item[78]}")
-                print(f"Custom Origin Place: {inserted_item[76]}")
-                print(f"Custom Packaging Unit: {inserted_item[77]}")
-            else:
-                print("⚠️ Item was inserted but could not be retrieved for verification")
-            
             return name
 
         except Error as e:
@@ -194,26 +178,117 @@ class CreateItem(GetItems, Connection):
             if cursor:
                 cursor.close()
 
+class CreatePurchase(GetItems, Connection):
+    def __init__(self, host, user, password, database):
+        GetItems.__init__(self)
+        Connection.__init__(self, host, user, password, database)
+
+    def get_random_purchase_invoice_name(self, cursor):
+        year = datetime.today().year
+        prefix = f"IMPORT-PINV-{year}-" 
+        while True:
+            random_digits = str(random.randint(0, 99999)).zfill(5)
+            candidate = prefix + random_digits
+            cursor.execute("SELECT name FROM `tabPurchase Invoice` WHERE name = %s", (candidate,))
+            if not cursor.fetchone():
+                return candidate
+
+    def create_purchase_invoice(self, item_name):
+        cursor = None
+        try:
+            cursor = self.conn.cursor()
+            name = self.get_random_purchase_invoice_name(cursor)
+            posting_date = datetime.today().strftime("%Y-%m-%d")
+            supplier_name = self.current_item.get("spplr_nm", "Dummy Supplier")
+
+            # Ensure supplier exists
+            cursor.execute("SELECT name FROM tabSupplier WHERE name = %s", (supplier_name,))
+            if not cursor.fetchone():
+                cursor.execute("""
+                    INSERT INTO tabSupplier (name, supplier_name, creation, modified)
+                    VALUES (%s, %s, NOW(), NOW())
+                """, (supplier_name, supplier_name))
+                print(f"Created new supplier: {supplier_name}")
+
+            # Get company
+            cursor.execute("SELECT name FROM tabCompany LIMIT 1")
+            company_row = cursor.fetchone()
+            if not company_row:
+                print(" No company found in tabCompany.")
+                return None
+            company_name = company_row[0]
+
+            currency = self.current_item.get("invc_fcur_cd", "USD")
+            conversion_rate = float(self.current_item.get("invc_fcur_excrt") or 1.0)
+            amount = float(self.current_item.get("invc_fcur_amt") or 0.0)
+            qty = float(self.current_item.get("qty") or 0)
+            rate = amount / qty if qty else 0
+
+            # Insert Purchase Invoice
+            cursor.execute("""
+                INSERT INTO `tabPurchase Invoice`
+                (name, supplier, posting_date, bill_date, company, currency, conversion_rate, docstatus, naming_series, creation, modified)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, 0, %s, NOW(), NOW())
+            """, (
+                name, supplier_name, posting_date, posting_date, company_name,
+                currency, conversion_rate, "ACC-PINV"
+            ))
+
+            # Insert item row
+            cursor.execute("""
+                INSERT INTO `tabPurchase Invoice Item`
+                (name, parent, parenttype, parentfield, item_code, item_name, qty, uom, stock_uom, rate, amount, creation, modified, idx)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW(), NOW(), %s)
+            """, (
+                str(uuid.uuid4()), name, "Purchase Invoice", "items",
+                item_name, self.current_item["item_nm"],
+                qty, self.current_item["qty_unit_cd"], self.current_item["qty_unit_cd"],
+                rate, amount, 1
+            ))
+
+            self.conn.commit()
+            print(f"Purchase Invoice created successfully: {name}")
+            return name
+
+        except Error as e:
+            print(f"Error creating Purchase Invoice: {e}")
+            self.conn.rollback()
+            return None
+        finally:
+            if cursor:
+                cursor.close()
+
+
+# ========== RUN THE SCRIPT ==========
 
 if __name__ == "__main__":
-    # Initialize with your database credentials
-    item_creator = CreateItem(
-        host="localhost",
-        user="root",
-        password="root",
-        database="_7fb1f4533ec3ac7c"
-    )
-    
+    host = "localhost"
+    user = "root"
+    password = "root"
+    database = "_7fb1f4533ec3ac7c"
+
+    item_creator = CreateItem(host, user, password, database)
+
     print("\n=== Fetching Import Data ===")
     import_data = item_creator.get_imports()
-    
+
     if import_data and import_data["status"] == "success":
         print("\n=== Creating Item ===")
-        created_item = item_creator.create()
-        
-        if not created_item:
+        created_item_name = item_creator.create()
+
+        if created_item_name:
+            print("\n=== Creating Purchase Invoice ===")
+            purchase_creator = CreatePurchase(host, user, password, database)
+            purchase_creator.current_item = item_creator.current_item
+            invoice_name = purchase_creator.create_purchase_invoice(created_item_name)
+
+            if not invoice_name:
+                print("Failed to create purchase invoice")
+
+            purchase_creator.close()
+        else:
             print("Failed to create item")
     else:
         print("Failed to fetch import data")
-    
+
     item_creator.close()
