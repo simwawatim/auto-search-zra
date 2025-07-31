@@ -127,15 +127,12 @@ class ZRAClient:
 
 class PackagingUnitCodeDetail(APIView):
     def get(self, request, code_name):
-        try:
-            obj = PackagingUnitCode.objects.get(code_name=code_name)
-        except PackagingUnitCode.DoesNotExist:
-            print("Not Found")
+        obj = PackagingUnitCode.objects.filter(code_name=code_name).first()
+        if not obj:
             return Response({'error': 'PackagingUnitCode not found'}, status=status.HTTP_404_NOT_FOUND)
 
         serializer = PackagingUnitCodeSerializer(obj)
         return Response(serializer.data)
-
 
 
 

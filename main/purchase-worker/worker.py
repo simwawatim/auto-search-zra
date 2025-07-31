@@ -167,11 +167,11 @@ class CreateItem(GetItems, Connection):
             cursor.execute(query, values)
             self.conn.commit()
 
-            print(f"\n✅ Item created successfully with name: {name}")
+            print(f"\nItem created successfully with name: {name}")
             return name
 
         except Error as e:
-            print(f"⛔ Database error: {e}")
+            print(f"Database error: {e}")
             self.conn.rollback()
             return None
         finally:
@@ -248,7 +248,7 @@ class CreatePurchase(GetItems, Connection):
             return name
 
         except Error as e:
-            print(f"⛔ Error creating Purchase Invoice: {e}")
+            print(f"Error creating Purchase Invoice: {e}")
             self.conn.rollback()
             return None
         finally:
@@ -279,12 +279,12 @@ if __name__ == "__main__":
             invoice_name = purchase_creator.create_purchase_invoice(created_item_name)
 
             if not invoice_name:
-                print("❌ Failed to create purchase invoice")
+                print("Failed to create purchase invoice")
 
             purchase_creator.close()
         else:
-            print("❌ Failed to create item")
+            print("Failed to create item")
     else:
-        print("❌ Failed to fetch import data")
+        print("Failed to fetch import data")
 
     item_creator.close()
