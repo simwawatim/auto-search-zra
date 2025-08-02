@@ -344,6 +344,7 @@ def update_rcpt_no(request):
             data = json.loads(request.body)
             docname = data.get('docname')
             rcpt_no = data.get('rcpt_no')
+            qrcode_url = data.get('qrcode_url')
             
             if not docname or not rcpt_no:
                 return JsonResponse({'error': 'Missing docname or rcpt_no'}, status=400)
@@ -355,8 +356,8 @@ def update_rcpt_no(request):
                 database='_7fb1f4533ec3ac7c'
             )
             cursor = conn.cursor()
-            sql = "UPDATE `tabSales Invoice` SET custom_rcpt_no = %s WHERE name = %s"
-            cursor.execute(sql, (rcpt_no, docname))
+            sql = "UPDATE `tabSales Invoice` SET custom_rcpt_no = %s, custom_qr_code = %s WHERE name = %s"
+            cursor.execute(sql, (rcpt_no, qrcode_url, docname))
             conn.commit()
             cursor.close()
             conn.close()
