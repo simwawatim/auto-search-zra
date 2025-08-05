@@ -3,7 +3,7 @@ import logging
 from main.models import Country, PackagingUnitCode, UnitOfMeasure, ItemsClass
 from main.serializers import CountrySerializer, PackagingUnitCodeSerializer, UnitOfMeasureSerializer, itemClassListSerializer
 import json
-from django.http import JsonResponse, HttpResponseBadRequest
+from django.http import HttpResponse, JsonResponse, HttpResponseBadRequest
 import mysql.connector
 from django.shortcuts import render
 import requests
@@ -18,7 +18,6 @@ from datetime import datetime
 import requests
 from datetime import datetime
 from django.conf import settings
-
 import requests
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -412,3 +411,4 @@ def get_rcpt_no(request):
 
     else:
         return JsonResponse({'error': 'GET request required'}, status=405)
+

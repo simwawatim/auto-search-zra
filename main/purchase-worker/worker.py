@@ -5,7 +5,7 @@ import mysql.connector
 import requests
 import random
 import json
-import re
+
 
 class Connection:
     def __init__(self, host, user, password, database):
@@ -27,6 +27,7 @@ class Connection:
             self.conn.close()
             print("MySQL connection closed")
 
+
 class GetItems:
     def __init__(self):
         self.result_msg = ""
@@ -37,7 +38,7 @@ class GetItems:
     def get_imports(self):
         url = "http://0.0.0.0:7000/api/imports?last_request_date=2024-01-01T00:00:00"
         try:
-            response = requests.get(url, timeout=10)
+            response = requests.get(url, timeout=50)
             response.raise_for_status()
             response_data = response.json()
 
@@ -96,6 +97,7 @@ class GetItems:
                 print(f"Raw response: {response.text}")
             return None
 
+
 class CreateItem(GetItems, Connection):
     def __init__(self, host, user, password, database):
         GetItems.__init__(self)
@@ -136,6 +138,11 @@ class CreateItem(GetItems, Connection):
 
         try:
             cursor = self.conn.cursor()
+            for uom in [self.current_item["qty_unit_cd"], self.current_item["pkg_unit_cd"]]:
+                cursor.execute("SELECT name FROM `tabUOM` WHERE name = %s", (uom,))
+                if not cursor.fetchone():
+                    cursor.execute("INSERT INTO `tabUOM` (name, creation, modified) VALUES (%s, NOW(), NOW())", (uom,))
+                    print(f"Created missing UOM: {uom}")
 
             query = """
                 INSERT INTO tabItem 
@@ -160,14 +167,10 @@ class CreateItem(GetItems, Connection):
                 self.current_item["hs_cd"],
             )
 
-            print("\n--- Executing Query ---")
-            print("Query:", query)
-            print("Values:", values)
-
             cursor.execute(query, values)
             self.conn.commit()
 
-            print(f"\nItem created successfully with name: {name}")
+            print(f"\n✅ Item created successfully with name: {name}")
             return name
 
         except Error as e:
@@ -201,6 +204,7 @@ class CreatePurchase(GetItems, Connection):
             posting_date = datetime.today().strftime("%Y-%m-%d")
             supplier_name = self.current_item.get("spplr_nm", "Dummy Supplier")
 
+            # Ensure supplier exists
             cursor.execute("SELECT name FROM tabSupplier WHERE name = %s", (supplier_name,))
             if not cursor.fetchone():
                 cursor.execute("""
@@ -209,14 +213,20 @@ class CreatePurchase(GetItems, Connection):
                 """, (supplier_name, supplier_name))
                 print(f"Created new supplier: {supplier_name}")
 
+            # Ensure company exists
             cursor.execute("SELECT name FROM tabCompany LIMIT 1")
             company_row = cursor.fetchone()
             if not company_row:
-                print("No company found in tabCompany.")
+                print("❌ No company found in tabCompany.")
                 return None
             company_name = company_row[0]
 
-            # Force currency to ZMW
+            # Ensure UOM exists
+            cursor.execute("SELECT name FROM `tabUOM` WHERE name = %s", (self.current_item["qty_unit_cd"],))
+            if not cursor.fetchone():
+                cursor.execute("INSERT INTO `tabUOM` (name, creation, modified) VALUES (%s, NOW(), NOW())", (self.current_item["qty_unit_cd"],))
+                print(f"Created missing UOM: {self.current_item['qty_unit_cd']}")
+
             currency = "ZMW"
             conversion_rate = 1.0
             amount = float(self.current_item.get("invc_fcur_amt") or 0.0)
@@ -225,10 +235,10 @@ class CreatePurchase(GetItems, Connection):
 
             cursor.execute("""
                 INSERT INTO `tabPurchase Invoice`
-                (name, supplier, posting_date, bill_date, company, currency, conversion_rate, docstatus, naming_series, creation, modified)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, 0, %s, NOW(), NOW())
+                (name, supplier, title, posting_date, bill_date, company, currency, conversion_rate, docstatus, naming_series, creation, modified)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, 0, %s, NOW(), NOW())
             """, (
-                name, supplier_name, posting_date, posting_date, company_name,
+                name, supplier_name, supplier_name,  posting_date, posting_date, company_name,
                 currency, conversion_rate, "ACC-PINV"
             ))
 
@@ -248,12 +258,13 @@ class CreatePurchase(GetItems, Connection):
             return name
 
         except Error as e:
-            print(f"Error creating Purchase Invoice: {e}")
+            print(f"❌ Error creating Purchase Invoice: {e}")
             self.conn.rollback()
             return None
         finally:
             if cursor:
                 cursor.close()
+
 
 # ========== RUN THE SCRIPT ==========
 
