@@ -1,10 +1,13 @@
 import uuid
+from django.http import HttpResponse
 from mysql.connector import Error
 from datetime import datetime
 import mysql.connector
 import requests
 import random
 import json
+
+from main.models import Country, ItemsClass, PackagingUnitCode, UnitOfMeasure
 
 
 class Connection:
@@ -36,11 +39,38 @@ class GetItems:
         self.current_item = {}
         
     def get_imports(self):
-        url = "http://0.0.0.0:7000/api/imports?last_request_date=2024-01-01T00:00:00"
         try:
-            response = requests.get(url, timeout=50)
-            response.raise_for_status()
-            response_data = response.json()
+            response_data = {
+                "resultCd": "000",
+                "resultMsg": "Success",
+                "resultDt": "2024-08-05T00:00:00",
+                "data": {
+                    "itemList": [
+                        {
+                            "taskCd": "2239078",
+                            "dclDe": "-1",
+                            "itemSeq": 1,
+                            "dclNo": "C3460-2019-TZDL",
+                            "hsCd": "20055900000",
+                            "itemNm": "FISH CAN",
+                            "imptItemsttsCd": "2",
+                            "orgnNatCd": "BR",
+                            "exptNatCd": "BR",
+                            "pkg": 2922,
+                            "pkgUnitCd": "WRAP",
+                            "qty": 19946,
+                            "qtyUnitCd": "EA",
+                            "totWt": 19945.57,
+                            "netWt": 19945.57,
+                            "spplrNm": "ODERICH CONSERVA QUALIDADE\nBRASIL",
+                            "agntNm": "BN METRO Ltd",
+                            "invcFcurAmt": 296865.6,
+                            "invcFcurCd": "USD",
+                            "invcFcurExcrt": 929.79
+                        }
+                    ]
+                }
+            }
 
             if response_data.get("resultCd") == "000":
                 self.result_msg = response_data.get("resultMsg", "")
@@ -50,6 +80,7 @@ class GetItems:
 
                 if self.item_list:
                     item = self.item_list[0]
+
                     self.current_item = {
                         "task_cd": item.get("taskCd", ""),
                         "dcl_de": item.get("dclDe", ""),
@@ -72,6 +103,7 @@ class GetItems:
                         "invc_fcur_cd": item.get("invcFcurCd", ""),
                         "invc_fcur_excrt": item.get("invcFcurExcrt", "")
                     }
+
                     print("\n--- Current Item Data ---")
                     for key, value in self.current_item.items():
                         print(f"{key}: {value}")
@@ -85,16 +117,11 @@ class GetItems:
 
             else:
                 print("Error fetching imports")
-                print(f"Response: {response.text}")
+                print(f"Response: {response_data}")
                 return None
 
-        except requests.exceptions.RequestException as e:
-            print(f"Request failed: {e}")
-            return None
-        except json.JSONDecodeError as e:
-            print(f"Invalid JSON response: {e}")
-            if 'response' in locals():
-                print(f"Raw response: {response.text}")
+        except Exception as e:
+            print(f"Failed: {e}")
             return None
 
 
@@ -135,6 +162,35 @@ class CreateItem(GetItems, Connection):
         name = f"IMPORT{self.current_item['orgn_nat_cd']}{self.current_item['qty_unit_cd']}{random_num}"
         item_group = "Imports"
         country_zm = "Zambia"
+        item_class_name = "N / A"
+        pkg_name = "N / A"
+        unit_of_measure_name = "N / A"
+        packaging_name = "N / A"       
+        country_name = "N / A"          
+
+        try:
+            pkgcode = PackagingUnitCode.objects.get(code=self.current_item["pkg_unit_cd"])
+            packaging_name = pkgcode.code_name or "N / A"
+        except PackagingUnitCode.DoesNotExist:
+            print("PackagingUnitCode not found, using default")
+        except Exception as e:
+            print(f"Error getting packaging code: {e}")
+
+        try:
+            unit_measure = UnitOfMeasure.objects.get(code=self.current_item["qty_unit_cd"])
+            unit_of_measure_name = unit_measure.code_name or "N / A"
+        except UnitOfMeasure.DoesNotExist:
+            print("UnitOfMeasure not found, using default")
+        except Exception as e:
+            print(f"Error getting unit of measure: {e}")
+
+        try:
+            origin_country = Country.objects.get(code=self.current_item["orgn_nat_cd"])
+            country_name = origin_country.name
+        except Country.DoesNotExist:
+            print("Country not found, using default")
+        except Exception as e:
+            print(f"Error getting country code: {e}")
 
         try:
             cursor = self.conn.cursor()
@@ -155,12 +211,12 @@ class CreateItem(GetItems, Connection):
                 name,
                 self.current_item["item_nm"],
                 float(self.current_item["qty"]),
-                self.current_item["qty_unit_cd"],
+                unit_of_measure_name,
                 country_zm,
                 self.current_item["task_cd"],
                 self.current_item["dcl_de"],
-                self.current_item["orgn_nat_cd"],
-                self.current_item["pkg_unit_cd"],
+                country_name,
+                packaging_name,
                 item_group,
                 1,
                 self.current_item["impt_itemstts_cd"],
@@ -180,6 +236,7 @@ class CreateItem(GetItems, Connection):
         finally:
             if cursor:
                 cursor.close()
+
 
 class CreatePurchase(GetItems, Connection):
     def __init__(self, host, user, password, database):
@@ -236,7 +293,7 @@ class CreatePurchase(GetItems, Connection):
             cursor.execute("""
                 INSERT INTO `tabPurchase Invoice`
                 (name, supplier, title, posting_date, bill_date, company, currency, conversion_rate, docstatus, naming_series, creation, modified)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, 0, %s, NOW(), NOW())
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, 1, %s, NOW(), NOW())
             """, (
                 name, supplier_name, supplier_name,  posting_date, posting_date, company_name,
                 currency, conversion_rate, "ACC-PINV"
@@ -258,7 +315,7 @@ class CreatePurchase(GetItems, Connection):
             return name
 
         except Error as e:
-            print(f"❌ Error creating Purchase Invoice: {e}")
+            print(f"Error creating Purchase Invoice: {e}")
             self.conn.rollback()
             return None
         finally:
@@ -268,34 +325,29 @@ class CreatePurchase(GetItems, Connection):
 
 # ========== RUN THE SCRIPT ==========
 
-if __name__ == "__main__":
+def run_import_process(request):
     host = "localhost"
     user = "root"
     password = "root"
     database = "_7fb1f4533ec3ac7c"
 
     item_creator = CreateItem(host, user, password, database)
-
-    print("\n=== Fetching Import Data ===")
     import_data = item_creator.get_imports()
 
     if import_data and import_data["status"] == "success":
-        print("\n=== Creating Item ===")
         created_item_name = item_creator.create()
-
         if created_item_name:
-            print("\n=== Creating Purchase Invoice ===")
             purchase_creator = CreatePurchase(host, user, password, database)
             purchase_creator.current_item = item_creator.current_item
             invoice_name = purchase_creator.create_purchase_invoice(created_item_name)
-
-            if not invoice_name:
-                print("Failed to create purchase invoice")
-
             purchase_creator.close()
+            if invoice_name:
+                item_creator.close()
+                return HttpResponse(f"Success: {created_item_name} & {invoice_name}")
+            return HttpResponse("Failed to create purchase invoice")
         else:
-            print("Failed to create item")
+            return HttpResponse("Failed to create item")
     else:
-        print("Failed to fetch import data")
+        return HttpResponse("Failed to fetch import data")
 
-    item_creator.close()
+
