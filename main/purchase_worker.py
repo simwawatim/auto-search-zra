@@ -240,12 +240,12 @@ def get_purchase(request):
 
     cursor.close()
     db.close()
-    create_purchase_and_purchase_items(request)
+    create_purchase_and_purchase_items(request, purchase_invoice_name)
     return HttpResponse(f"Done! Inserted items: {', '.join(inserted_items)}")
 
 
 
-def create_purchase_and_purchase_items(request):
+def create_purchase_and_purchase_items(request, purchase_invoice_name):
     purchase_data = GetPurchase().get_purchase_zra_client()
     sale_list = purchase_data.get("saleList", [])
 
@@ -257,6 +257,7 @@ def create_purchase_and_purchase_items(request):
         if stock_rls_dt:
             stock_rls_dt = datetime.strptime(stock_rls_dt, "%Y-%m-%d %H:%M:%S")
         invoice = SupplierInvoice.objects.create(
+            invoice_name=purchase_invoice_name,
             spplr_tpin=sale.get("spplrTpin"),
             spplr_nm=sale.get("spplrNm"),
             spplr_bhf_id=sale.get("spplrBhfId"),
