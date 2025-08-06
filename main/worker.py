@@ -52,7 +52,7 @@ class GetItems:
                             "itemSeq": 1,
                             "dclNo": "C3460-2019-TZDL",
                             "hsCd": "20055900000",
-                            "itemNm": "Back Packs",
+                            "itemNm": "Headsets",
                             "imptItemsttsCd": "2",
                             "orgnNatCd": "BR",
                             "exptNatCd": "BR",
