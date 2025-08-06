@@ -1,8 +1,9 @@
+from decimal import Decimal
 import random
 import uuid
 from datetime import datetime
 from django.http import HttpResponse
-from main.models import ItemsClass, PackagingUnitCode, UnitOfMeasure
+from main.models import ItemsClass, PackagingUnitCode, SupplierInvoice, SupplierInvoiceItem, UnitOfMeasure
 import mysql.connector
 from mysql.connector import Error
 
@@ -239,4 +240,77 @@ def get_purchase(request):
 
     cursor.close()
     db.close()
+    create_purchase_and_purchase_items(request)
     return HttpResponse(f"Done! Inserted items: {', '.join(inserted_items)}")
+
+
+
+def create_purchase_and_purchase_items(request):
+    purchase_data = GetPurchase().get_purchase_zra_client()
+    sale_list = purchase_data.get("saleList", [])
+
+    for sale in sale_list:
+
+        cfm_dt = datetime.strptime(sale.get("cfmDt"), "%Y-%m-%d %H:%M:%S")
+        sales_dt = sale.get("salesDt")
+        stock_rls_dt = sale.get("stockRlsDt")
+        if stock_rls_dt:
+            stock_rls_dt = datetime.strptime(stock_rls_dt, "%Y-%m-%d %H:%M:%S")
+        invoice = SupplierInvoice.objects.create(
+            spplr_tpin=sale.get("spplrTpin"),
+            spplr_nm=sale.get("spplrNm"),
+            spplr_bhf_id=sale.get("spplrBhfId"),
+            spplr_invc_no=str(sale.get("spplrInvcNo")),
+            rcpt_ty_cd=sale.get("rcptTyCd"),
+            pmt_ty_cd=sale.get("pmtTyCd"),
+            cfm_dt=cfm_dt,
+            sales_dt=sales_dt,
+            stock_rls_dt=stock_rls_dt,
+            tot_item_cnt=sale.get("totItemCnt"),
+            tot_taxbl_amt=Decimal(sale.get("totTaxblAmt")),
+            tot_tax_amt=Decimal(sale.get("totTaxAmt")),
+            tot_amt=Decimal(sale.get("totAmt")),
+            remark=sale.get("remark"),
+        )
+
+        for item in sale.get("itemList", []):
+            SupplierInvoiceItem.objects.create(
+                invoice=invoice,
+                item_seq=item.get("itemSeq"),
+                item_cd=item.get("itemCd"),
+                item_cls_cd=item.get("itemClsCd"),
+                item_nm=item.get("itemNm"),
+                bcd=item.get("bcd"),
+                pkg_unit_cd=item.get("pkgUnitCd"),
+                pkg=Decimal(item.get("pkg")),
+                qty_unit_cd=item.get("qtyUnitCd"),
+                qty=Decimal(item.get("qty")),
+                prc=Decimal(item.get("prc")),
+                sply_amt=Decimal(item.get("splyAmt")),
+                dc_rt=Decimal(item.get("dcRt")),
+                dc_amt=Decimal(item.get("dcAmt")),
+                vat_cat_cd=item.get("vatCatCd"),
+                ipl_cat_cd=item.get("iplCatCd"),
+                tl_cat_cd=item.get("tlCatCd"),
+                excise_tx_cat_cd=item.get("exciseTxCatCd"),
+                vat_taxbl_amt=Decimal(item.get("vatTaxblAmt")),
+                excise_taxbl_amt=Decimal(item.get("exciseTaxblAmt")),
+                ipl_taxbl_amt=Decimal(item.get("iplTaxblAmt")),
+                tl_taxbl_amt=Decimal(item.get("tlTaxblAmt")),
+                taxbl_amt=Decimal(item.get("taxblAmt")),
+                vat_amt=Decimal(item.get("vatAmt")),
+                ipl_amt=Decimal(item.get("iplAmt")),
+                tl_amt=Decimal(item.get("tlAmt")),
+                excise_tx_amt=Decimal(item.get("exciseTxAmt")),
+                tot_amt=Decimal(item.get("totAmt")),
+            )
+
+    return HttpResponse("Supplier invoices and items saved to the database.")
+
+   
+
+
+
+
+
+

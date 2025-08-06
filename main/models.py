@@ -41,6 +41,7 @@ class Country(models.Model):
     
 
 class SupplierInvoice(models.Model):
+    invoice_name = models.CharField(max_length=100, null=True, blank=True) 
     spplr_tpin = models.CharField(max_length=20)
     spplr_nm = models.CharField(max_length=255)
     spplr_bhf_id = models.CharField(max_length=10)
