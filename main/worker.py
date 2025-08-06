@@ -52,7 +52,7 @@ class GetItems:
                             "itemSeq": 1,
                             "dclNo": "C3460-2019-TZDL",
                             "hsCd": "20055900000",
-                            "itemNm": "FISH CAN",
+                            "itemNm": "Back Packs",
                             "imptItemsttsCd": "2",
                             "orgnNatCd": "BR",
                             "exptNatCd": "BR",
@@ -162,8 +162,6 @@ class CreateItem(GetItems, Connection):
         name = f"IMPORT{self.current_item['orgn_nat_cd']}{self.current_item['qty_unit_cd']}{random_num}"
         item_group = "Imports"
         country_zm = "Zambia"
-        item_class_name = "N / A"
-        pkg_name = "N / A"
         unit_of_measure_name = "N / A"
         packaging_name = "N / A"       
         country_name = "N / A"          
@@ -211,7 +209,7 @@ class CreateItem(GetItems, Connection):
                 name,
                 self.current_item["item_nm"],
                 float(self.current_item["qty"]),
-                unit_of_measure_name,
+                "Acre",
                 country_zm,
                 self.current_item["task_cd"],
                 self.current_item["dcl_de"],
@@ -226,7 +224,7 @@ class CreateItem(GetItems, Connection):
             cursor.execute(query, values)
             self.conn.commit()
 
-            print(f"\n✅ Item created successfully with name: {name}")
+            print(f"\nItem created successfully with name: {name}")
             return name
 
         except Error as e:
@@ -274,14 +272,14 @@ class CreatePurchase(GetItems, Connection):
             cursor.execute("SELECT name FROM tabCompany LIMIT 1")
             company_row = cursor.fetchone()
             if not company_row:
-                print("❌ No company found in tabCompany.")
+                print("No company found in tabCompany.")
                 return None
             company_name = company_row[0]
 
             # Ensure UOM exists
             cursor.execute("SELECT name FROM `tabUOM` WHERE name = %s", (self.current_item["qty_unit_cd"],))
             if not cursor.fetchone():
-                cursor.execute("INSERT INTO `tabUOM` (name, creation, modified) VALUES (%s, NOW(), NOW())", (self.current_item["qty_unit_cd"],))
+                cursor.execute("INSERT INTO `tabUOM` (name, creation, modified) VALUES (%s, NOW(), NOW())", ("Acre"))
                 print(f"Created missing UOM: {self.current_item['qty_unit_cd']}")
 
             currency = "ZMW"
