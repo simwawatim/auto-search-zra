@@ -170,7 +170,7 @@ def get_purchase(request):
         supplier_name = sale.get("spplrNm")
         supplier_tpin = sale.get("spplrTpin")
         code = datetime.now().strftime("%H%M%S")
-        purchase_invoice_name = f"PURCHASEINVOICE-{code}-{random.randint(1000,9999)}"
+        purchase_invoice_name = f"SMART-INVOICE-PURCHASE-{code}-{random.randint(1000,9999)}"
         posting_date = datetime.today().strftime("%Y-%m-%d")
         company_name = "IIS"
         currency = "ZMW"
