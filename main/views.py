@@ -1,7 +1,7 @@
 import json
 import logging
-from main.models import Country, PackagingUnitCode, UnitOfMeasure, ItemsClass
-from main.serializers import CountrySerializer, PackagingUnitCodeSerializer, UnitOfMeasureSerializer, itemClassListSerializer
+from main.models import Country, PackagingUnitCode, SupplierInvoice, UnitOfMeasure, ItemsClass
+from main.serializers import CountrySerializer, PackagingUnitCodeSerializer, SupplierInvoiceSerializer, UnitOfMeasureSerializer, itemClassListSerializer
 import json
 from django.http import HttpResponse, JsonResponse, HttpResponseBadRequest
 import mysql.connector
@@ -28,6 +28,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 import mysql.connector
 from mysql.connector import Error
+from rest_framework.generics import ListAPIView
 
 
 class ZRAClient:
@@ -412,3 +413,7 @@ def get_rcpt_no(request):
     else:
         return JsonResponse({'error': 'GET request required'}, status=405)
 
+
+class SupplierInvoiceListView(ListAPIView):
+    queryset = SupplierInvoice.objects.all()
+    serializer_class = SupplierInvoiceSerializer

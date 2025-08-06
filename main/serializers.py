@@ -1,4 +1,4 @@
-from .models import Country, PackagingUnitCode, UnitOfMeasure, ItemsClass
+from .models import Country, PackagingUnitCode, SupplierInvoice, SupplierInvoiceItem, UnitOfMeasure, ItemsClass
 from rest_framework import serializers
 
 
@@ -25,3 +25,17 @@ class itemClassListSerializer(serializers.ModelSerializer):
     class Meta:
         model = ItemsClass
         fields = ['itemClsCd', 'itemClsNm', 'itemClsLvl', 'useYn']
+
+
+class SupplierInvoiceItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SupplierInvoiceItem
+        fields = '__all__'
+
+
+class SupplierInvoiceSerializer(serializers.ModelSerializer):
+    item_list = SupplierInvoiceItemSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = SupplierInvoice
+        fields = '__all__'
