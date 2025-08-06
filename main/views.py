@@ -3,6 +3,7 @@ import logging
 from main.models import Country, PackagingUnitCode, SupplierInvoice, UnitOfMeasure, ItemsClass
 from main.serializers import CountrySerializer, PackagingUnitCodeSerializer, SupplierInvoiceSerializer, UnitOfMeasureSerializer, itemClassListSerializer
 import json
+from django_filters.rest_framework import DjangoFilterBackend
 from django.http import HttpResponse, JsonResponse, HttpResponseBadRequest
 import mysql.connector
 from django.shortcuts import render
@@ -414,6 +415,23 @@ def get_rcpt_no(request):
         return JsonResponse({'error': 'GET request required'}, status=405)
 
 
+
 class SupplierInvoiceListView(ListAPIView):
-    queryset = SupplierInvoice.objects.all()
     serializer_class = SupplierInvoiceSerializer
+
+    def get_queryset(self):
+        queryset = SupplierInvoice.objects.all()
+        invoice_name = self.request.query_params.get('invoice_name')
+        if invoice_name:
+            queryset = queryset.filter(invoice_name=invoice_name)
+        return queryset
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        if not queryset.exists():
+            return Response(
+                {"detail": "No supplier invoices found with the given name."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)

@@ -9,10 +9,10 @@ urlpatterns = [
     path('api/supplier-invoices/', views.SupplierInvoiceListView.as_view(), name='supplier-invoice-list'),
     path('country/<str:name>/', views.CountryDetailByName.as_view(), name='country-detail-by-name'),
     path('api/get-item-class-by-name/<str:item_class_name>/', views.ItemsClassView.as_view()),
-    path("api/imports", views.Imports.as_view(), name="get_imports"),
     path('api/update_rcpt/', views.update_rcpt_no, name='update_rcpt_no'),
-    path('api/get-rcpt-no/', views.get_rcpt_no),
-    path("run-import/", run_import_process, name="run_import"),
     path('execute_purchase/', get_purchase, name='execute_purchase'),
+    path("api/imports", views.Imports.as_view(), name="get_imports"),
+    path("run-import/", run_import_process, name="run_import"),
+    path('api/get-rcpt-no/', views.get_rcpt_no),
 
 ]
