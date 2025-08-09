@@ -218,15 +218,16 @@ def get_purchase(request):
 
             vat_mapping = {
                 "A": "Standard Rated 16%",
-                "B": "Minimum Taxable Value (MTV)",
+                "B": "MTV",
                 "Exports": "Exports",
-                "C2": "Zero-rating Local Purchases Order",
-                "C3": "Zero-rated by nature 0%",
+                "C2": "Local Purchases Order",
+                "C3": "Zero-rated 0%",
                 "D": "Exempt",
                 "E": "Disbursement",
                 "C1": "Reverse VAT",
                 "N/A": "N/A"
             }
+
 
             ipl_mapping = {
                 "IPL1": "Insurance Premium Levy",
@@ -240,15 +241,15 @@ def get_purchase(request):
                 "EXE": "Excise Electricity"
             }
 
-            get_vat_name = item.get("vatCatCd")   
-            get_ipl_name = item.get("iplCatCd")          
-            get_tl_name = item.get("tlCatCd")            
+            get_vat_cd= item.get("vatCatCd")   
+            get_ipl_cd = item.get("iplCatCd")          
+            get_tl_cd = item.get("tlCatCd")            
             get_excise_name = item.get("exciseTxCatCd")   
 
-            vatCd = next((code for code, desc in vat_mapping.items() if desc == get_vat_name), "N / A")
-            iplCd = next((code for code, desc in ipl_mapping.items() if desc == get_ipl_name), "N / A")
-            tlCd = next((code for code, desc in tl_mapping.items() if desc == get_tl_name), "N / A")
-            exciseCd = next((code for code, desc in excise_mapping.items() if desc == get_excise_name), "N / A")
+            vatName = vat_mapping.get(get_vat_cd, "N / A")
+            iplName = ipl_mapping.get(get_ipl_cd, "N / A")
+            tlName = tl_mapping.get(get_tl_cd, "N / A")
+            exciseName = excise_mapping.get(get_excise_name, "N / A")
 
             cursor.execute("SELECT name FROM `tabUOM` WHERE name = %s", (qty_uom,))
             if cursor.fetchone():
@@ -269,10 +270,10 @@ def get_purchase(request):
                     item_code, 
                     item_name, 
                     qty,
-                    vatCd,
-                    iplCd,
-                    tlCd,
-                    exciseCd,
+                    vatName,
+                    iplName,
+                    tlName,
+                    exciseName,
                     uom_name, 
                     uom_name,
                     rate, 
