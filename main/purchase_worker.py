@@ -93,7 +93,6 @@ def get_purchase(request):
     inserted_items = []
     purchase_data = GetPurchase().get_purchase_zra_client()
     sale_list = purchase_data.get("saleList", [])
-
     VAT_CATEGORIES = {
         "A": "StandardRated",
         "B": "Minimum Taxable Value (MTV)",
@@ -118,7 +117,8 @@ def get_purchase(request):
             item_name = item.get("itemNm", "N / A")
             item_class_name = "N / A"
             pkg_name = "N / A"
-            qty_uom = item.get("qtyUnitCd", "EA")
+            qty_uom = item.get("qtyUnitCd", "EA") 
+
             cursor.execute("SELECT name FROM `tabUOM` WHERE name = %s", (qty_uom,))
             if cursor.fetchone():
                 unit_of_measure_name = qty_uom
@@ -141,6 +141,7 @@ def get_purchase(request):
             vat_code = item.get("vatCatCd", "N / A")
             vat_name = VAT_CATEGORIES.get(vat_code, "Unknown VAT Category")
 
+            # Check if item exists
             cursor.execute("SELECT name FROM tabItem WHERE name = %s", (item_code,))
             if not cursor.fetchone():
                 try:
@@ -171,7 +172,7 @@ def get_purchase(request):
         code = datetime.now().strftime("%H%M%S")
         purchase_invoice_name = f"SMART-INVOICE-PURCHASE-{code}-{random.randint(1000,9999)}"
         posting_date = datetime.today().strftime("%Y-%m-%d")
-        supplier_invoice_no = sale.get("spplrInvcNo")
+        supp_purchase_no = sale.get("spplrInvcNo")
         company_name = "IIS"
         currency = "ZMW"
         conversion_rate = 1.0
@@ -191,11 +192,11 @@ def get_purchase(request):
         try:
             cursor.execute("""
                 INSERT INTO `tabPurchase Invoice`
-                (name, supplier, custom_purchase__invoice, supplier_name, title, posting_date, bill_date, company, currency,
+                (name, supplier, supplier_name, custom_purchase__invoice, title, posting_date, bill_date, company, currency,
                  conversion_rate, docstatus, naming_series, credit_to, creation, modified)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 0, %s, %s, NOW(), NOW())
             """, (
-                purchase_invoice_name, supplier_name, supplier_invoice_no, supplier_name, supplier_name,
+                purchase_invoice_name, supplier_name, supp_purchase_no, supplier_name, supplier_name,
                 posting_date, posting_date, company_name, currency, conversion_rate,
                 "ACC-PINV", credit_to
             ))
@@ -212,7 +213,43 @@ def get_purchase(request):
             rate = item.get("prc") or 0
             amount = qty * rate
 
+            
             qty_uom = item.get("qtyUnitCd", "EA")
+
+            vat_mapping = {
+                "A": "Standard Rated 16%",
+                "B": "Minimum Taxable Value (MTV)",
+                "Exports": "Exports",
+                "C2": "Zero-rating Local Purchases Order",
+                "C3": "Zero-rated by nature 0%",
+                "D": "Exempt",
+                "E": "Disbursement",
+                "C1": "Reverse VAT",
+                "N/A": "N/A"
+            }
+
+            ipl_mapping = {
+                "IPL1": "Insurance Premium Levy",
+                "IPL2": "Re-Insurance"
+            }
+            tl_mapping = {
+                "TL": "Tourism Levy"
+            }
+            excise_mapping = {
+                "ECM": "Excise on Coal",
+                "EXE": "Excise Electricity"
+            }
+
+            get_vat_name = item.get("vatCatCd")   
+            get_ipl_name = item.get("iplCatCd")          
+            get_tl_name = item.get("tlCatCd")            
+            get_excise_name = item.get("exciseTxCatCd")   
+
+            vatCd = next((code for code, desc in vat_mapping.items() if desc == get_vat_name), "N / A")
+            iplCd = next((code for code, desc in ipl_mapping.items() if desc == get_ipl_name), "N / A")
+            tlCd = next((code for code, desc in tl_mapping.items() if desc == get_tl_name), "N / A")
+            exciseCd = next((code for code, desc in excise_mapping.items() if desc == get_excise_name), "N / A")
+
             cursor.execute("SELECT name FROM `tabUOM` WHERE name = %s", (qty_uom,))
             if cursor.fetchone():
                 uom_name = qty_uom
@@ -222,13 +259,25 @@ def get_purchase(request):
             try:
                 cursor.execute("""
                     INSERT INTO `tabPurchase Invoice Item`
-                    (name, parent, parenttype, parentfield, item_code, item_name, qty, uom, stock_uom, rate, amount, creation, modified, idx)
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW(), NOW(), %s)
+                    (name, parent, parenttype, parentfield, item_code, item_name, qty, custom_tax_type, custom_ipl, custom_tl, custom_excise, uom, stock_uom, rate, amount, creation, modified, idx)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW(), NOW(), %s)
                 """, (
-                    str(uuid.uuid4()), purchase_invoice_name, "Purchase Invoice", "items",
-                    item_code, item_name, qty,
-                    uom_name, uom_name,
-                    rate, amount, idx
+                    str(uuid.uuid4()), 
+                    purchase_invoice_name, 
+                    "Purchase Invoice", 
+                    "items",
+                    item_code, 
+                    item_name, 
+                    qty,
+                    vatCd,
+                    iplCd,
+                    tlCd,
+                    exciseCd,
+                    uom_name, 
+                    uom_name,
+                    rate, 
+                    amount, 
+                    idx
                 ))
                 db.conn.commit()
                 idx += 1
