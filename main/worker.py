@@ -309,7 +309,7 @@ class CreatePurchase(GetItems, Connection):
             ))
 
             self.conn.commit()
-            print(f"✅ Purchase Invoice created successfully: {name}")
+            print(f" Purchase Invoice created successfully: {name}")
             return name
 
         except Error as e:

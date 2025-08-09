@@ -93,6 +93,7 @@ def get_purchase(request):
     inserted_items = []
     purchase_data = GetPurchase().get_purchase_zra_client()
     sale_list = purchase_data.get("saleList", [])
+
     VAT_CATEGORIES = {
         "A": "StandardRated",
         "B": "Minimum Taxable Value (MTV)",
@@ -117,9 +118,7 @@ def get_purchase(request):
             item_name = item.get("itemNm", "N / A")
             item_class_name = "N / A"
             pkg_name = "N / A"
-            qty_uom = item.get("qtyUnitCd", "EA")  # e.g., 'bundle'
-
-            # Validate UOM: fallback to 'Acre' if not found in tabUOM
+            qty_uom = item.get("qtyUnitCd", "EA")
             cursor.execute("SELECT name FROM `tabUOM` WHERE name = %s", (qty_uom,))
             if cursor.fetchone():
                 unit_of_measure_name = qty_uom
@@ -142,7 +141,6 @@ def get_purchase(request):
             vat_code = item.get("vatCatCd", "N / A")
             vat_name = VAT_CATEGORIES.get(vat_code, "Unknown VAT Category")
 
-            # Check if item exists
             cursor.execute("SELECT name FROM tabItem WHERE name = %s", (item_code,))
             if not cursor.fetchone():
                 try:
@@ -173,6 +171,7 @@ def get_purchase(request):
         code = datetime.now().strftime("%H%M%S")
         purchase_invoice_name = f"SMART-INVOICE-PURCHASE-{code}-{random.randint(1000,9999)}"
         posting_date = datetime.today().strftime("%Y-%m-%d")
+        supplier_invoice_no = sale.get("spplrInvcNo")
         company_name = "IIS"
         currency = "ZMW"
         conversion_rate = 1.0
@@ -192,11 +191,11 @@ def get_purchase(request):
         try:
             cursor.execute("""
                 INSERT INTO `tabPurchase Invoice`
-                (name, supplier, supplier_name, title, posting_date, bill_date, company, currency,
+                (name, supplier, custom_purchase__invoice, supplier_name, title, posting_date, bill_date, company, currency,
                  conversion_rate, docstatus, naming_series, credit_to, creation, modified)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, 0, %s, %s, NOW(), NOW())
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 0, %s, %s, NOW(), NOW())
             """, (
-                purchase_invoice_name, supplier_name, supplier_name, supplier_name,
+                purchase_invoice_name, supplier_name, supplier_invoice_no, supplier_name, supplier_name,
                 posting_date, posting_date, company_name, currency, conversion_rate,
                 "ACC-PINV", credit_to
             ))
@@ -213,7 +212,6 @@ def get_purchase(request):
             rate = item.get("prc") or 0
             amount = qty * rate
 
-            # Use the same UOM fallback logic here
             qty_uom = item.get("qtyUnitCd", "EA")
             cursor.execute("SELECT name FROM `tabUOM` WHERE name = %s", (qty_uom,))
             if cursor.fetchone():
